@@ -1,0 +1,30 @@
+Solar
+Grid Meter (Net Load)
+Demand (kW)
+50
+0
+−50
+−100
+Jun 5
+2022
+Jun 12
+Jun 19
+Time
+Jun 26
+Demand Charges ($)Energy Charges ($)Emissions (mT CO 2 )% Emissions Savings
+1
+2
+3
+416369
+13817
+12661
+1123930908
+5808
+7364
+398745
+29
+25
+280
+35
+44
+37

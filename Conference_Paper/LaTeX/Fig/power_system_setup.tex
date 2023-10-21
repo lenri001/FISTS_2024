@@ -1,0 +1,44 @@
+\documentclass[tikz,border=4mm]{standalone}
+\usepackage[normalem]{ulem}
+\usetikzlibrary{positioning,fit,calc,backgrounds}
+\tikzset{block/.style={draw,thick,text width=2cm,minimum height=1cm,align=center},
+         line/.style={-latex}
+}
+\makeatletter
+\def\ruwave{\bgroup \markoverwith{\lower3.5\p@\hbox{\textcolor{red}{\sixly \char58}}}\ULon}
+\font\sixly=lasy6
+\makeatother
+
+
+\begin{document}
+\begin{tikzpicture}
+  \node[block, fill = teal] (a) at(0,0) {UCR Office Building};
+  \node[block, fill = orange, right=of a] (b) {Battery Energy Storage Inverter};
+  \node[block, fill = green,right= of b] (c) {Lithium Battery Array};
+  \node[block, fill = magenta, left=of a] (d) {Solar Panel Inverter};
+  \node[block, fill = pink, left=of d] (e) {Solar Panel Array};
+  \node[block,fill = red, above =of a] (q) {Power Grid};
+  
+  
+  %\node[block] (e) at ([yshift=-2cm]$(b)!0.5!(c)$) {Gate};
+  \begin{scope}[on background layer]
+   %\node[draw,inner xsep=5mm,inner ysep=6mm,fit=(b)(c),fill=magenta!40]{};
+   \node[draw,fill=yellow,fill opacity=0.5,inner xsep=5mm,inner
+     ysep=8mm,fit=(b)(c),label={130:BES}](f){};
+  \node[draw,fill=cyan,fill opacity=0.5,inner xsep=5mm,inner
+     ysep=8mm,fit=(d)(e),label={50:Solar}]{};
+  \end{scope}
+  \draw[line] (q)-- (a) -- node [text width=2.5cm,midway,right,align=center] {AC} (q);
+  \draw[line] (a)-- (q) -- node [text width=2.5cm,midway,right,align=center] {AC} (a);
+  \draw[line] (b)-- (a) -- node [text width=2.5cm,midway,above,align=center] {AC} (b);
+  \draw[line] (c) -- (b) -- node [text width=2.5cm,midway,above,align=center] {DC} (c);
+  \draw[line] (a)-- (b) -- node [text width=2.5cm,midway,above,align=center] {AC} (a);
+  \draw[line] (b) -- (c) -- node [text width=2.5cm,midway,above,align=center] {DC} (b);
+  \draw[line] (d) -- (a) -- node [text width=2.5cm,midway,above,align=center] {AC} (d);
+  \draw[line] (e) -- (d) -- node [text width=2.5cm,midway,above,align=center] {DC} (e);
+  
+  
+  %\draw[line] (f.east) -- (c)node[pos=0.4,above]{flow};
+  %\draw[line] (e)-- ($(b)!0.5!(c)$);
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,9 @@
+RPU
+lg = [31, 16, 25, 20, 4]
+pk = ['off', 'mid', 'on', 'mid', 'off']
+LADWP
+lg = [39, 13, 9, 13, 9, 13]
+pk = ['off', 'mid', 'on', 'mid', 'off']
+SCE
+lg = [63, 24, 9]
+pk = ['off', 'on', 'off']
