@@ -21,6 +21,29 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{himabindu2021analysis}
+N.~Himabindu, S.~Hampannavar, B.~Deepa, and M.~Swapna, ``Analysis of microgrid
+  integrated photovoltaic (pv) powered electric vehicle charging stations
+  (evcs) under different solar irradiation conditions in india: A way towards
+  sustainable development and growth,'' \emph{Energy reports}, vol.~7, pp.
+  8534--8547, 2021.
+
+\bibitem{yoon2017economic}
+S.-G. Yoon and S.-G. Kang, ``Economic microgrid planning algorithm with
+  electric vehicle charging demands,'' \emph{Energies}, vol.~10, no.~10, p.
+  1487, 2017.
+
+\bibitem{purvins2018electric}
+A.~Purvins, C.-F. Covrig, and G.~Lempidis, ``Electric vehicle charging system
+  model for accurate electricity system planning,'' \emph{IET Generation,
+  Transmission \& Distribution}, vol.~12, no.~17, pp. 4053--4059, 2018.
+
+\bibitem{Khemir}
+M.~Khemir, M.~Rojas, R.~Popova, T.~Feizi, J.~F. Heinekamp, and K.~Strunz,
+  ``Real-world application of sustainable mobility in urban microgrids,''
+  \emph{IEEE Transactions on Industry Applications}, vol.~58, no.~2, pp.
+  1396--1405, 2022.
+
 \bibitem{garrido2021dynamic}
 J.~Garrido, M.~J. Barth, L.~Enriquez-Contreras, A.~J. Hasan, M.~Todd, S.~Ula,
   and J.~Yusuf, ``Dynamic data-driven carbon-based electric vehicle charging

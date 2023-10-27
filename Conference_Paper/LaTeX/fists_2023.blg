@@ -8,7 +8,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: cite.bib
-Repeated entry---line 332 of file cite.bib
+Repeated entry---line 416 of file cite.bib
  : @misc{OpenModelica
  :                   , url={https://openmodelica.org/}, journal={OpenModelica}}
 I'm skipping whatever remains of this entry
@@ -17,45 +17,45 @@ I'm skipping whatever remains of this entry
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 5 entries,
+You've used 9 entries,
             4087 wiz_defined-function locations,
-            1107 strings with 13414 characters,
-and the built_in function-call counts, 2166 in all, are:
-= -- 117
-> -- 43
-< -- 11
-+ -- 26
-- -- 7
-* -- 98
-:= -- 303
-add.period$ -- 7
-call.type$ -- 5
-change.case$ -- 1
-chr.to.int$ -- 30
-cite$ -- 5
-duplicate$ -- 171
-empty$ -- 217
-format.name$ -- 8
-if$ -- 483
+            1137 strings with 14369 characters,
+and the built_in function-call counts, 5919 in all, are:
+= -- 440
+> -- 136
+< -- 51
++ -- 80
+- -- 22
+* -- 281
+:= -- 842
+add.period$ -- 15
+call.type$ -- 9
+change.case$ -- 5
+chr.to.int$ -- 117
+cite$ -- 9
+duplicate$ -- 433
+empty$ -- 475
+format.name$ -- 27
+if$ -- 1367
 int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 38
-newline$ -- 46
-num.names$ -- 1
-pop$ -- 142
+int.to.str$ -- 9
+missing$ -- 80
+newline$ -- 58
+num.names$ -- 5
+pop$ -- 225
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 149
+skip$ -- 446
 stack$ -- 0
-substring$ -- 71
-swap$ -- 98
-text.length$ -- 1
+substring$ -- 286
+swap$ -- 339
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 5
+type$ -- 9
 warning$ -- 0
-while$ -- 5
-width$ -- 6
-write$ -- 59
+while$ -- 21
+width$ -- 10
+write$ -- 102
 (There was 1 error message)
