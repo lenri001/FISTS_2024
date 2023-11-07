@@ -33,33 +33,9 @@
 \begin{document}
 
 \title{CO\textsubscript{2} Impact Electric Vehicle Charging on a Local Microgrid: a case study in Southern California }
-%\Thanks{Identify Applicable Funding Agency Here. If None, Delete This.}
-%}
-%
-
-%\author{\IEEEauthorblockN{1\textsuperscript{st}  Luis Fernando Enriquez-Contreras, Jacqueline Garrido,  Matthew Barth, Sadrul Ula, Arun Raju}
-%	\IEEEauthorblockA{\textit{Department of Electrical  and Computer Engineering} \\
-%		\textit{University of California, Riverside}\\
-%		Riverside, United States of America \\
-%		lenri001@ucr.edu, jgarr023@ucr.edu, barth@ece.ucr.edu, sula@cert.ucr.edu,  arun@engr.ucr.edu  }
-%	\and
-%	\IEEEauthorblockN{2\textsuperscript{nd} A S M Jahid Hasan}
-%	\IEEEauthorblockA{\textit{Department of Electrical and Computer Engineering} \\
-%		\textit{North South University}\\
-%		Dhaka, Bangladesh\\
-%		jahid.hasan12@northsouth.edu }
-%	\and
-%	\IEEEauthorblockN{3\textsuperscript{rd} Jubair Yusuf}
-%	\IEEEauthorblockA{\textit{Electric Power Systems Research} \\
-%		\textit{Sandia National Laboratories}\\
-%		Albuquerque,  United States of America\\
-%		jyusuf@sandia.gov}
-%
-%
-%}
 
 \author{
-	\IEEEauthorblockN{1\textsuperscript{st} Luis Fernando Enriquez-Contreras\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}, Jacqueline Garrido\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}, Matthew Barth\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}, Sadrul Ula\IEEEauthorrefmark{2}, Arun Raju\IEEEauthorrefmark{2}}
+	\IEEEauthorblockN{1\textsuperscript{st} Luis Fernando Enriquez-Contreras\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}, Matthew Barth\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}, Sadrul Ula\IEEEauthorrefmark{2}, Arun Raju\IEEEauthorrefmark{2}}
 	\IEEEauthorblockA{\IEEEauthorrefmark{1}\textit{Department of Electrical  and Computer Engineering} \\
 		\textit{University of California, Riverside}\\
 				Riverside, United States of America \\
@@ -68,102 +44,35 @@
 		\textit{University of California, Riverside}\\
 				Riverside, United States of America \\
 				lenri001@ucr.edu, jgarr023@ucr.edu, barth@ece.ucr.edu, sula@cert.ucr.edu,  arun@engr.ucr.edu}
-		\and
-	\IEEEauthorblockN{2\textsuperscript{nd} A S M Jahid Hasan}
-	\IEEEauthorblockA{\textit{Department of Electrical and Computer Engineering} \\
-			\textit{North South University}\\
-			Dhaka, Bangladesh\\
-			jahid.hasan12@northsouth.edu }
-		\and
-	\IEEEauthorblockN{3\textsuperscript{rd} Jubair Yusuf}
-	\IEEEauthorblockA{\textit{Department of Electrical  and Computer Engineering} \\
-			\textit{University of California, Riverside}\\
-			Riverside,  United States of America\\
-			jyusu001@ucr.edu}
 }
 \maketitle
 
 \begin{abstract}
 
-		As renewable energy penetration in electric grids increases with time, it becomes more important for electric utilities to update their electric rates  such that they minimize CO\textsubscript{2} emissions. In this paper, we evaluate a case study at the University of California, Riverside (UCR) to simulate different Time of Use (TOU) rate optimizations that minimizes electric costs while analyzing CO\textsubscript{2} output, by using the openmodelica model, we based on different electric utility rates in Southern California.  The different amounts of power and energy consumed by each rate is compared with CAISO CO\textsubscript{2} emissions data in order to review the different emission levels from the different utility electric rates on a 15 minute basis.  Electric costs are also compared in order to see the different savings the consumer will have with the different rates. It was found that Southern California Edison (SCE) TOU rate had the most savings for the consumer and that Riverside (RPU) TOU flat rate had the lowest CO\textsubscript{2} emissions.
+	In this paper, we evaluate a case study at the University of California, Riverside (UCR) that simulates different EV charging setups with their associated electric costs and CO\textsubscript{2}. The CO\textsubscript{2} are calculated with high resolution CAISO CO\textsubscript{2} emissions data in order to review the different emission levels from the different setups. Electric costs are also compared in order to see the different savings the consumer will have with the different setups. It was found that Level 2 charging has a minimal impact on electric costs and CO\textsubscript{2} emissions, which can be offsetted with EV pricing, and by replacing trips from internal combustion engine (ICE) vehicles. Level 3 charging does cause a higher output of emissions, it can double the demand costs by itself. While the CO\textsubscript{2} can be offset from the prevented ICE trips, a prevention of Level 3 charging during peak times must be implemented to prevent high demand costs.
+	
 
 \end{abstract}
 
 \begin{IEEEkeywords}
-micorgrids, demand response, TOU, CO\textsubscript{2} emissions, modelica
+micorgrids, demand response, CO\textsubscript{2} emissions, modelica, EV charging
 \end{IEEEkeywords}
 
-%Parameters
 
-%\nomenclature[P0]{$t$}{Timestep in seconds}
-%
-%\nomenclature[P1]{$\Delta t$}{Duration of each timestep}
-%
-%\nomenclature[P2]{$T^{\prime}$}{Total number of timesteps}
-%
-%\nomenclature[P3]{$E_{\text {init }}^{B}$}{Initial stored energy of the BESS}
-%
-%\nomenclature[P4]{$P_{t}^{S}$}{Solar generation $\mathrm{t}$}
-%
-%\nomenclature[P5]{$P_{t}^{L}$}{Load at $\mathrm{t}$}
-%
-%\nomenclature[P6]{$\alpha_{t}$}{Energy charge at $\mathrm{t}$}
-%
-%\nomenclature[P7]{$\beta$}{Monthly peak demand charge}
-%
-%\nomenclature[P8]{$\beta_{t}^{\text {On }} / \beta_{t}^{\text {Mid }} / \beta_{t}^{\text {Off }}$}{$\mathrm{On} / \mathrm{Mid} / $Off-Peak demand charges at $\mathrm{t}$}
-%
-%\nomenclature[P8]{$\eta^{+} / \eta^{-}$}{Charging/discharging efficiency of BESS}
-%
-%%Variables
-%\nomenclature[Vx]{}{}
-%\nomenclature[V0]{$E_{t}^{B}$}{Energy stored at $\mathrm{t}$ in BESS}
-%
-%\nomenclature[V1]{$P_{t}^{B}$}{BESS power at $\mathrm{t}$}
-%
-%\nomenclature[V2]{$P_{t}^{B+} / P_{t}^{B-}$}{BESS charging/discharging power at $\mathrm{t}$}
-%
-%\nomenclature[V3]{$P_{t}^{G}$}{Power drawn from the grid at $\mathrm{t}$}
-%
-%\nomenclature[V4]{$P_{t}^{S B}$}{Solar power fed to BESS at $\mathrm{t}$}
-%
-%\nomenclature[V5]{$P_{t}^{S L}$}{Solar power fed to load at $\mathrm{t}$}
-%
-%\nomenclature[V6]{$P_{t}^{B L}$}{BESS power fed to load at $\mathrm{t}$}
-%
-%\printnomenclature
 \section{Introduction}
     \subsection{Background}
-	California is committed to reducing greenhouse gas emissions through various approaches. However, the two largest contributors to greenhouse gas emissions in California are transportation and electricity generation. California currently has X percent of electric vehicle sales and plans on banning internal combustion engine vehicles by 2035. At the same time, California is increasing the number of charging stations in the state, having over X currently and Y amount in 20xx. Electric vehicle technology has improved, and new vehicles can charge in X minutes. This is due to Level 3 charging, which can be as high as 350 kilowatts (kW) opposed to Level 2 charging, which is capped at 19 kW. While this innovation has led to a higher practicality for electric vehicles, it also leads to more difficulty for the owners of these chargers since they can create a tremendous amount of loads very quickly. Most Level 2 chargers consumers use are similar in load to an air conditioner. While California tries to increase clean energy penetration, it also needs to reduce the amount of GHG emissions produced by transportation through electrification. This leads to two conundrums: how will California add enough capacity for electrified transport, and how clean is the grid to minimize the amount of emissions associated with battery electric vehicles? One proposal to mitigate the strain on the grid is to keep electricity production and EV charging local by using microgrids. A microgrid is defined as: “‘a group of interconnected loads and distributed energy resources within clearly defined electrical boundaries that acts as a single controllable entity with respect to the grid. A microgrid can connect and disconnect from the grid to enable it to operate in both grid-connected or island-mode” As microgrids and EV chargers become ubiquitous, it is crucial to study the economic and environmental impacts EV charging in particular fast charging, will have on microgrids.
+	California is committed to reducing greenhouse gas emissions through various approaches. However, the two largest contributors to greenhouse gas emissions in California are transportation and electricity generation. In California, 18.84 \% percent of 2022 vehicle sales were electric, \cite{ev_sale_percentage} and the state plans on banning internal combustion engine vehicles by 2035 \cite{ice_ban}. At the same time, California is increasing the number of charging stations in the state, having over 13,737 stations \cite{ev_stations_CA}. Electric vehicle technology has improved, and new vehicles can charge in 20-60 minutes \cite{ev_stats}. This is due to Level 3 charging, which can be as high as 350 kilowatts (kW), as opposed to Level 2 charging, which is capped at 19 kW \cite{ev_stats}. While this innovation has led to a higher practicality for electric vehicles, it also leads to more difficulty for the owners of these chargers since they can create a tremendous amount of loads very quickly. Most Level 2 chargers consumers use are similar in load to an air conditioner. While California tries to increase clean energy penetration, it also needs to reduce the amount of GHG emissions produced by transportation through electrification. This leads to two conundrums: how will California add enough capacity for electrified transport, and how clean is the grid to minimize the amount of emissions associated with battery electric vehicles? One proposal to mitigate the strain on the grid is to keep electricity production and EV charging local by using microgrids. A microgrid is defined as: “‘a group of interconnected loads and distributed energy resources within clearly defined electrical boundaries that acts as a single controllable entity with respect to the grid. A microgrid can connect and disconnect from the grid to enable it to operate in both grid-connected or island-mode” As microgrids and EV chargers become ubiquitous, it is crucial to study the economic and environmental impacts EV charging, in particular fast charging, will have on microgrids.
   	\subsection{Literature Review}
-  	In  \cite{himabindu2021analysis},   Electric Vehicle Charging Station (EVCS) are analyzed under different solar irradiation conditions.  A demand and stochastic model is devoloped, a techno-economic assessment is done, and the environmental impacts are analyzed.  The authors conclude that EVCS with solar's optimal configuration  and investment costs are highly dependent on feed-in tariffs and  the solar irradiation of the area. The  CO\textsubscript{2} emissions were calculated on a per years basis, and do not deal with the variations of  CO\textsubscript{2} emissions within a single day.  Also, only energy charges where calculated with bo demand costs calculations.  In \citen{yoon2017economic},  a control algorithm is proposed with that in different scenarios can minimize charging time or costs or maximize renewable energy use. The authors used a uniform distribution during peak times  to model the charging loads, and only level 2 charging at 3.3 kW no level 3 charging. An EV charging model is proposed in \cite{purvins2018electric},  that load shifts charging events from high peak times to low peak times.  The authors found their current method does little to reduce peak load shaving, and solar production surplus may not be necessarily shifted to EVs due to their low availability at the time.  The dataset was limited to one week , with four EVs in a system with 10 buildings.  In \cite{Khemir}, the author run multiple scenarios with different self consumption rates. The scenarios are compared and the CO\textsubscript{2} emissions for each scenario are calculated. The CO\textsubscript{2} emissions are calculated from a whole life-cycle CO \textsubscript{2}  emissions. 
-  	
-%			Previous literature has explored various topics concerning TOU impacts on  CO\textsubscript{2} emissions. In \cite{schedulingcontroller}, a lightning search algorithm (LSA) is used to optimize a microgrid controller based on CO\textsubscript{2} emissions, energy use, and demand costs. Their model predicts a reduction of 78 to 220 tons of CO\textsubscript{2} from the atmosphere, does not optimize using TOU rates, and calculates emissions using a flat demand. In \cite{economicandenvironmentalpolicy}, the authors investigate the deployment cost of multiple scenarios in a multi-carrier microgrid (MCMG) model that considers demand shifting, monthly peak, and CO\textsubscript{2} emissions. They advocate for better environmental policies in the utility sector since the MCMG scenario optimized solely for CO\textsubscript{2} emissions was 39\% less cost-effective than the scenario optimized for cost.  In  \cite{stochasticoptimalscheduling}, simulations are run on a system consisting of three microgrids while considering and neglecting emission charges. CO\textsubscript{2} Emissions were halved when considering CO\textsubscript{2} emissions charges. However, the lower emission operation has a higher upfront cost and is less economically attractive for customers. In \cite{emsformg} five scenarios with cost and emission reduction in mind are done in an isolated microgrid. The authors conclude that running the pareto control strategy is the best compromise between cost and CO\textsubscript{2} emissions output. The different case scenarios were different balances between cost and CO\textsubscript{2} emissions, but only used one electric rate. In \cite{abcdr}, the authors assess different demand side management strategies utilizing the Artificial Bee Colony algorithm under different tariff structures. TOU, critical peak pricing (CPP), real-time electricity pricing (RTEP), and day-ahead pricing (DAP) seasonal pricing structures were assessed for CO\textsubscript{2} emissions output using demand side management and no BESS. \cite{optimalmmgemissions} compares microgrids considering demand response and/or electricity sharing and compares those scenarios by the amount of costs and carbon CO\textsubscript{2} emissions. This paper incorporates the different aspects of these papers, as shown in Figure \ref{tab:litreview}.
-%			\\
-%			\begin{table}[H]
-%			\caption{Contributions of Various Papers in  the CO\textsubscript{2} Emissions of Electric Grids }
-%			\tiny
-%			\input{Table/lit_table.tex}
-%			\normalsize
-%			\label{tab:litreview}
-%			\end{table}
-			This paper's main contribution is to analyze the impacts different pricing structures have on the behavior of microgrids and the associated CO\textsubscript{2} emissions. One goal every TOU pricing schedule should have is for the economic incentives to align with CO\textsubscript{2} emission reductions. This paper evaluates flat rate and TOU pricing from different electric utilities in California. This paper also uses a higher time resolution than most to date and explains in further detail of a realistic simulation of a microgrid using system dynamics software.  
-%    \subsection{Pricing (Flat vs TOU)}
-%      		One of the main contributions of this paper is to see how a flat rate versus TOU pricing affects the CO\textsubscript{2} emissions associated with adapting different rate schedules. A flat rate demand charge means the customer is charged for the maximum power consumed within a 15-minute rolling average, regardless of when this maximum occurs. A TOU rate means the customer has a charge for the maximum amount of power used if any 15-minute rolling average within each of the predefined blocks, usually off-peak, mid-peak, on-peak, and any depending on the season super off-peak. In our case study, the microgrid electric rate is the RPU flat demand charge; however,  we simulate other pricing scenarios, including the RPU TOU rate, and investor-owned utilities (IOU) TOU rates. TOU rates can be seasonal, meaning the rate peak times change depending on the season. All rates in this case study utilize the summer seasonal rate since it is usually when the grid is the most strained and electric utilities are the least flexible to changing the times, and when the month of x is analyzed. The customer is usually charged for both demand and energy charges in commercial rates. Energy charges are similar to demand charges since they both use the same TOU time period but differ in that energy charges are the sum of energy for that time period compared to the maximum demand during the TOU period for demand charges. The SCE and Los Angeles Department of Water of Power (LADWP) rate schedules are analyzed in this paper as they are the other two major electric utilities in Southern California. The different rates used in this study are shown in Table \ref{tab:electricpricing}.
-%       		\begin{table}[H]
-%       			\caption{TOU Schedule Rates in Southern California }
-%       			\footnotesize
-%       			\input{Table/electric_pricing.tex}
-%       			\normalsize
-%       			\label{tab:electricpricing}
-%       		\end{table}
-
+  		In  \cite{himabindu2021analysis},   Electric Vehicle Charging Stations (EVCS) are analyzed under different solar irradiation conditions.   The study develops a demand and stochastic model, then performs a techno-economic assessment and analyzes the environmental impact of EVCS.  The authors conclude that EVCS with solar's optimal configuration  and investment costs are highly dependent on feed-in tariffs and  the solar irradiation of the area. The  CO\textsubscript{2} emissions were calculated on a per year basis, and do not deal with the variations of  CO\textsubscript{2} emissions within a single day.  Also, only energy charges were calculated with no demand costs calculations. \citen{yoon2017economic},  proposes a control algorithm is proposed that in different scenarios can minimize charging time or costs or maximize renewable energy use. The authors used a uniform distribution during peak times  to model the charging loads, with only Level 2 charging at 3.3 kW and no Level 3 charging. An EV charging model is proposed in \cite{purvins2018electric},  that load shifts charging events from high peak times to low peak times.  The authors found their current method does little to reduce peak load shaving, and solar production surplus may not be necessarily shifted to EVs due to their low availability at the time.  The dataset was limited to one week ], with four EVs in a system with 10 buildings.  In \cite{Khemir}, the authors run multiple scenarios with different self consumption rates, first comparing scenarios and then calculating emissions for each scenario.. The CO\textsubscript{2} emissions are calculated from whole life-cycle CO \textsubscript{2}  emissions without a high time resolution.  \cite{huang2023multi} uses the Non-dominated Sorting Genetic Algorithm-
+  		II (NSGA-II) to analyze 4 different responses with 0 \% 10 \% 20 \% 30\%  EV penetration and a Monte Carlo load profile.  Results were remarkable, however CO\textsubscript{2} calculations were not explained. and the specific impacts of  Level 2 vs Level 3 charging were not shown.  \cite{tan2020multi} analyzes IEEE  9 and 14 nodes  that forecast the EV loads one day ahead.  The author use multiple microgrids to balance out EV charging within the system.  Multi-objective energy management of multiple microgrids is used to orchestrate the operation.
+  		
+  		This paper's analyzes the impacts different Level 2 and Level 3 charging have on the behavior of microgrids and the associated electric costs and CO\textsubscript{2} emissions in southern California. The simulation is run in open Modelica rather than being a purely calculated model. This paper also uses a higher time resolution data than most to calculate the CO\textsubscript{2} emissions every 15 minutes.
     \subsection{Peak Shaving Strategy}
-       		Peak shaving is a standard method for reducing high-demand charges. Since demand charges are based on only the maximum value over the entire month, in this simple algorithm, we assume the consumer wants to minimize the demand charges as much as possible. The algorithm is based solely on cost savings for a typical microgrid. During flat-rate peak shaving, the algorithm looks at the amount of power being imported, if there is enough energy, and if the batteries can mitigate a fraction of that or the total amount. With TOU, peak shaving is prioritized more during on-peak times, and shifts demand to mid-peak and off-peak hours. 
+       		Peak shaving is a standard method for reducing high-demand charges. Since demand charges are based on only the maximum value over the entire month, we assume the consumer wants to minimize the demand charges as much as possible. Our algorithm is based solely on cost savings for a typical microgrid. During peak-shaving, the algorithm looks at the amount of power being imported, if there is enough energy, and if the batteries can mitigate a fraction of that or the total amount. 
     \subsection{CO\textsubscript{2} Emissions}
-        	Our microgrid's solar production greatly overlaps with the local solar energy production within the larger grid. This leads to the problem within our microgrid that while it is zero CO\textsubscript{2} emissions during solar peak hours, we still rely on the high CO\textsubscript{2} emission main electrical grid during off-peak hours, which is when there are higher CO\textsubscript{2} emissions. However, with a BESS, we can utilize renewable energy during peak times and at night. In this scenario, the control algorithm is economic-based since we want to see how  the TOU rates align with actual CO\textsubscript{2} emissions output. The simulation uses emission output calculations from CAISO for each time interval, as a sum of all the powerplant CO\textsubscript{2} emissions (imports, natural gas, biogas, biomass, geothermal, coal) \textsubscript{m}TON\textsubscript{CO\textsubscript{2}} / hour. The CO\textsubscript{2} emissions output is divided by the amount of power produced (solar, wind, geothermal, biomass, biogas, small hydro, grid batteries, large hydro, imports, nuclear, coal ) in MW, which gives us an emissions rate of (TON\textsubscript{CO\textsubscript{2}} / hour) / W. This is multiplied with our 15-minute data kW, and a multiplier of  $1/ 4000$ to convert kW into W and to address for the four 15 minute periods in an hour.   This gives us an estimate of the amount of CO\textsubscript{2} emissions in \textsubscript{m}TON\textsubscript{CO\textsubscript{2}} for every 15 minutes that is summed together to give us the total for the entire period.  This method is similar to the one used in \cite{garrido2021dynamic}.  When the grid does not pull power from the grid or is sending power, the CO\textsubscript{2} emissions are assumed to be zero since we are using our solar energy.
+        	Our microgrid's solar production greatly overlaps with the local solar energy production within the larger grid.  With a BESS, we can utilize renewable energy during peak times and at night. In this scenario, the control algorithm is economically based since we want to see how EV charging aligns with actual CO\textsubscript{2} emission outputs. The simulation uses emission output calculations from CAISO for each time interval as a sum of all the powerplant CO\textsubscript{2} emissions (imports, natural gas, biogas, biomass, geothermal, coal) $\frac{\textsubscript{m}TON\textsubscript{CO\textsubscript{2}}}{hour}$. The CO\textsubscript{2} emissions output is divided by the amount of power produced (solar, wind, geothermal, biomass, biogas, small hydro, grid batteries, large hydro, imports, nuclear, coal ) in MW, which gives us an emissions rate of $\frac{\frac{\textsubscript{m}TON\textsubscript{CO\textsubscript{2}}}{hour}}{W}$ . This is multiplied with our 15-minute data kW, and a multiplier. The multiplier of  $\frac{1}{4000}$ converts kW into W and to address for the four 15 minute periods in an hour multiples by four.  This gives us an estimate of the amount of CO\textsubscript{2} emissions in \textsubscript{m}TON\textsubscript{CO\textsubscript{2}} for every 15 minutes that is summed together to give us the total for the entire period.  This method is similar to the one used in \cite{garrido2021dynamic}.  When the grid does not pull power from the grid or is sending power, the CO\textsubscript{2} emissions are assumed to be zero since we are using our solar energy.
 \section{Simulation in OpenModelica}
-    	OpenModelica is an open-source implementation of the Modelica programming language \cite{OpenModelica}. Modelica is a programming language that is designed for dynamic systems simulation \cite{ModelicaLanguage}. OMEdit is the GUI interface for OpenModelica, allowing the user to draw a system for simulation \cite{OMEdit}. The microgrid scenarios are simulated in OpenModelica using the Modelica buildings library.  Lawrence Berkeley National Laboratory created the Modelica buildings library for building and district energy and control systems \cite{ModelicaBuildingsLibrary}. However, its capability for energy storage systems, bi-directional inverter, solar, and HVAC modeling make it ideal for a microgrid simulation setup. This allows us to create scenarios that do not currently exist in our microgrid, like running a month with solar with the same load, or running the BESS control algorithm for different electric rates.  The power circuits are three-phase balanced circuits. The simulation of our case study microgrid is the grid-connected to the building netload. The model's net load is broken down into solar power, HVAC loads, regular building loads, electric vehicle chargers, and the BESS as shown in Figure \ref{fig:powersystemsetupfull} . 
+    	OpenModelica is an open-source implementation of the Modelica programming language \cite{OpenModelica}. Modelica is a programming language that is designed for dynamic systems simulation \cite{ModelicaLanguage}. OMEdit is the GUI interface for OpenModelica, allowing the user to draw a system for simulation \cite{OMEdit}. The microgrid scenarios are simulated in OpenModelica using the Modelica buildings library.  Lawrence Berkeley National Laboratory created the Modelica buildings library for building and district energy and control systems \cite{ModelicaBuildingsLibrary}. However, its capability for energy storage systems, bi-directional inverter, solar, and HVAC modeling make it ideal for a microgrid simulation setup. This allows us to create scenarios that do not currently exist in our microgrid, like running a month with solar with the same load, or running the BESS control algorithm for different electric rates.  The power circuits are three-phase balanced circuits. The simulation of our case study microgrid is the grid-connected to the building netload. The model's net load is broken down into solar power, HVAC loads, regular building loads, electric vehicle chargers, and the BESS as shown in Figure \ref{fig:powersystemsetupfull}.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=1\linewidth]{Fig/power_system_setup_modelica}
@@ -265,207 +174,58 @@ micorgrids, demand response, TOU, CO\textsubscript{2} emissions, modelica
 			\caption{Peak Shaving}
 			\label{alg:peakshavingflatrate}
 		\end{algorithm}
-%		\begin{algorithm}
-%			\caption{Flat Rate Peak-Shaving}}\label{alg:peak_shaving}
-%			df $\gets$ dataset \\
-%			output $\gets$ [] \\
-%			count $\gets$ 0 \\
-%			delay $\gets$ 15 minutes \\
-%			new\_interval $\gets$ current\_time \\
-%			\uIf {data\_length $>$ count}{
-%			}
-%			\uElseIf{}{
-%			}	
-%			\uElseIf{}{
-%			}	
-%			\uElseIf{}{
-%			}
-%			\Else{
-%			}	
-%		\end{algorithm}
-	
-\section{Results}
-%    \subsection{Scenarios}
-
-%    	\subsubsection{Scenario 1}   		
-%    					\begin{figure*}
-%    			\centering
-%    			\begin{subfigure}[b]{0.475\textwidth}
-%    				\centering
-%    				\includegraphics[width=\textwidth]{Fig/ucr_theortical_actual_net_load_11_20.pdf}
-%    				\caption[Network2]%
-%    				{{\small UCR Microgrid Building Theoretical and Actual Load Data }}    
-%    				\label{ucr_act}
-%    			\end{subfigure}
-%    			\hfill
-%    			\begin{subfigure}[b]{0.475\textwidth}  
-%    				\centering 
-%    				\includegraphics[width=\textwidth]{Fig/ucr_theortical_actual_net_load_resample_11_20.pdf}
-%    				\caption[]%
-%    				{{\small UCR Microgrid Building Theoretical and Actual Load 15 Minute Average Resample}}    
-%    				\label{ucr_act_rs}
-%    			\end{subfigure}
-%    			\vskip\baselineskip
-%    			
-%    			\caption[ The average and standard deviation of critical parameters ]
-%    			{\small UCR Microgrid Building Theoretical and Actual Load} 
-%    			\label{fig:ucr_act}
-%    		\end{figure*}
-
-%		\begin{figure*}
-%				\begin{subfigure}[b]{0.475\textwidth}
-%					\centering
-%					\includegraphics[width=1\linewidth]{Fig/3_Scenario_1_Mg_Output_Jun_01_2022_to_Jun_30_2022}
-%					\caption{Scenario 1}
-%					\label{fig:3scenario1mgoutputjun012022tojun302022}
-%				\end{subfigure}
-%				\hfill
-%				\begin{subfigure}[b]{0.475\textwidth}
-%					\centering
-%					\includegraphics[width=1\linewidth]{Fig/3_Scenario_2_Mg_Output_Jun_01_2022_to_Jun_30_2022}
-%					\caption{Scenario 2}
-%					\label{fig:3scenario2mgoutputjun012022tojun302022}
-%				\end{subfigure}			
-%				
-%				\begin{subfigure}[b]{0.475\textwidth}
-%					\centering
-%					\includegraphics[width=1\linewidth]{Fig/3_Scenario_3_Mg_Output_Jun_01_2022_to_Jun_30_2022}
-%					\caption{Scenario 3}
-%					\label{fig:3scenario3mgoutputjun012022tojun302022}
-%				\end{subfigure}
-%				\hfill
-%				\begin{subfigure}[b]{0.475\textwidth}
-%					\centering
-%					\includegraphics[width=1\linewidth]{Fig/3_Scenario_4_Mg_Output_Jun_01_2022_to_Jun_30_2022}
-%					\caption{Scenario 4}
-%					\label{fig:3scenario4mgoutputjun012022tojun302022}
-%				\end{subfigure}				
-%				
-%				\begin{subfigure}[b]{0.475\textwidth}
-%					\centering
-%					\includegraphics[width=1\linewidth]{Fig/3_Scenario_5_Mg_Output_Jun_01_2022_to_Jun_30_2022}
-%					\caption{Scenario 5}
-%					\label{fig:3scenario5mgoutputjun012022tojun302022}
-%				\end{subfigure}				
-%				\hfill
-%				\begin{subfigure}[b]{0.475\textwidth}
-%					\centering
-%					\includegraphics[width=1\linewidth]{Fig/3_Scenario_6_Mg_Output_Jun_01_2022_to_Jun_30_2022}
-%					\caption{Scenario 6}
-%					\label{fig:3scenario6mgoutputjun012022tojun302022}
-%				\end{subfigure}
-%		\end{figure*}
-%				
-%				\begin{figure}[H]
-%					\centering
-%					\includegraphics[width=1\linewidth]{Fig/3_Scenario_1_Mg_Output_Jun_01_2022_to_Jun_30_2022}
-%					\caption{Scenario 1}
-%					\label{fig:3scenario1mgoutputjun012022tojun302022}
-%				\end{figure}
-%				
-%				\begin{figure}[H]
-%					\centering
-%					\includegraphics[width=1\linewidth]{Fig/3_Scenario_2_Mg_Output_Jun_01_2022_to_Jun_30_2022}
-%					\caption{Scenario 2}
-%					\label{fig:3scenario2mgoutputjun012022tojun302022}
-%				\end{figure}			
-%				
-%				\begin{figure}[H]
-%					\centering
-%					\includegraphics[width=1\linewidth]{Fig/3_Scenario_3_Mg_Output_Jun_01_2022_to_Jun_30_2022}
-%					\caption{Scenario 3}
-%					\label{fig:3scenario3mgoutputjun012022tojun302022}
-%				\end{figure}
-%				
-%				\begin{figure}[H]
-%					\centering
-%					\includegraphics[width=1\linewidth]{Fig/3_Scenario_4_Mg_Output_Jun_01_2022_to_Jun_30_2022}
-%					\caption{Scenario 4}
-%					\label{fig:3scenario4mgoutputjun012022tojun302022}
-%				\end{figure}				
-%				
-%				\begin{figure}[H]
-%					\centering
-%					\includegraphics[width=1\linewidth]{Fig/3_Scenario_5_Mg_Output_Jun_01_2022_to_Jun_30_2022}
-%					\caption{Scenario 5}
-%					\label{fig:3scenario5mgoutputjun012022tojun302022}
-%				\end{figure}				
-%				
-%				\begin{figure}[H]
-%					\centering
-%					\includegraphics[width=1\linewidth]{Fig/3_Scenario_6_Mg_Output_Jun_01_2022_to_Jun_30_2022}
-%					\caption{Scenario 6}
-%					\label{fig:3scenario6mgoutputjun012022tojun302022}
-%				\end{figure}
-				
-				
-%			\begin{figure}[H]
-%				\centering
-%				\includegraphics[width=1\linewidth]{Fig/0_Mg_Output_Mar_01_2022_to_Feb_28_2023}
-%				\caption{}
-%				\label{fig:0mgoutputmar012022tofeb282023}
-%			\end{figure}
-%    	\subsubsection{Scenario 2}
-%			\begin{figure}[H]
-%				\centering
-%				\includegraphics[width=1\linewidth]{Fig/1_Mg_Output_Mar_01_2022_to_Feb_28_2023}
-%				\caption{}
-%				\label{fig:1mgoutputmar012022tofeb282023}
-%			\end{figure}
-%    	\subsubsection{Scenario 3}
-%			\begin{figure}[H]
-%				\centering
-%				\includegraphics[width=1\linewidth]{Fig/2_Mg_Output_Mar_01_2022_to_Feb_28_2023}
-%				\caption{}
-%				\label{fig:2mgoutputmar012022tofeb282023}
-%			\end{figure}
-%    	\subsubsection{Scenario 4}
-%			\begin{figure}[H]
-%				\centering
-%				\includegraphics[width=1\linewidth]{Fig/3_Mg_Output_Mar_01_2022_to_Feb_28_2023}
-%				\caption{}
-%				\label{fig:3mgoutputmar012022tofeb282023}
-%			\end{figure}
-    		
 
 \section{Results}
-	The charging setup is modified in OpenModelica for different layouts and scenarios. The scenarios are described in Table \ref{tab:scenarios}. Scenarios 1 through 4 need to utilize the best represent a more typical setup at most EV charging stations. Scenarios 5 through 8 utilize the peak shaving abilities of a large BESS to mitigate the impacts on demand and emissions of EV charging, especially Level 3 charging. Scenarios 1 and 5 show a base case where only solar or solar and ABS are installed at a building. This is to control the experience and compare it with the other scenarios to show the impact of EV charging. scenarios 2 and 6 would be considered the more typical EV charging setup. Most commercial centers mostly use level 2 charging, which is relatively cheap and simple to install and does not have too much of a major impact. Scenarios 3,4,7,8 add one 50 kW charger to the setup. This represents the rapid adoption of fast charging and its impacts on commercial buildings.   Each scenario is run independently of one other, and the power outputs of the different components in the simulation are shown in Figure 5. Each scenario’s power pulled from the grid is juxtaposed in Figure \ref{fig:netloadscenariocomparisonsummer} and the daily CO2 emissions average from each scenario is shown in Figure \ref{fig:emissionsscenariocomparison}. The emissions and electric price amounts of each scenario are shown in Table \ref{tab:emissions}. 
-
-%	The microgrid is modified in open Modelica for layout and scenarios. The scenarios are described in Table \ref{tab:scenarios}. Scenarios 1 and 2 are modified in open Modelica directly by shutting down both the solar system and the BESS in scenario 1 and shutting off the BESS in scenario 2. Scenarios 3 -6 by modifying the Python control algorithm open Modelica calls for the BESS. Scenario 3 represents the microgrid's current flat rate pricing structure, while scenarios 4-6 represent different optimizations if our microgrid were under different TOU rates. Each scenario is run independently of one another, and the power outputs of the different components in the simulation are shown in Figure \ref{fig:scenariosubplot}.
-%%	 \ref{fig:3scenario1mgoutputjun012022tojun302022}, \ref{fig:3scenario2mgoutputjun012022tojun302022}, \ref{fig:3scenario3mgoutputjun012022tojun302022}, \ref{fig:3scenario4mgoutputjun012022tojun302022}, \ref{fig:3scenario5mgoutputjun012022tojun302022}, \ref{fig:3scenario6mgoutputjun012022tojun302022}. 
-%	 Each scenario's power pulled from the grid is juxtaposed in Figure \ref{fig:netloadscenariocomparisonsummer}, and the daily CO\textsubscript{2} emissions average from each scenario is shown in Figure \ref{fig:emissionsscenariocomparison}. The emissions and electric price amount of each scenario is shown in \ref{tab:emissions}. The CO\textsubscript{2} emissions savings has scenario 1 as a reference since there is no locally-produced renewable energy in this scenario. 
-	     	\begin{table}[H]
-	 	\caption{Simulated Scenarios of the UCR Microgrid using Different Layouts and Electric Pricing Structures}
-	 	\tiny
-	 	\input{Table/scenarios.tex}
-	 	\normalsize
-	 	\label{tab:scenarios}
-	 \end{table}
-	 
-	 \begin{figure*}
-	 	\centering
-	 	\includegraphics[width=0.9\linewidth]{Fig/scenario_subplot}
-	 	\caption{openModelica Power Simulations}
-	 	\label{fig:scenariosubplot}
-	 \end{figure*}
+	The charging setup is modified in OpenModelica for different layouts and scenarios. The scenarios are described in Table \ref{tab:scenarios}. Scenarios 1 through 4 best represent a more typical setup at most EV charging stations. Scenarios 5 through 8 utilize the peak shaving abilities of a large BESS to mitigate the impacts on demand and emissions of EV charging, especially Level 3 charging. Scenarios 1 and 5 show a base case where only solar or solar and ABS are installed at a building. This is to control the experience and compare it with the other scenarios to show the impact of EV charging. Scenarios 2 and 6 would be considered the more typical EV charging setup. Most commercial centers mostly use Level 2 charging, which is relatively cheap and simple to install and does not have too much of a major impact. Scenarios 3,4,7,8 add one 50 kW charger to the setup. This represents the rapid adoption of fast charging and its impacts on commercial buildings.   Each scenario is run independently of one other, and the power outputs of the different components in the simulation are shown in Figure \ref{fig:scenariospoweroutputboxplot}. Each scenario’s power pulled from the grid is juxtaposed in Figures \ref{fig:scenariosmgloadoutputboxplot} \ref{fig:netloadscenariocomparisonsummer}.  The different amounts of loads produced by each charging is shown in Figure \ref{fig:scenariosevpoweroutputboxplot}. The BESS output is shown in Figure \ref{fig:bessboxplot}. The average of daily CO\textsubscript{2} emissions from each scenario is shown in Figure \ref{fig:emissionsscenariocomparison}. The emissions and electric price amounts of each scenario are shown in Table \ref{tab:emissions}.
+	\begin{table}[H]
+		\caption{Simulated Scenarios of the UCR Microgrid using Different Layouts and Electric Pricing Structures}
+		\tiny
+		\input{Table/scenarios.tex}
+		\normalsize
+		\label{tab:scenarios}
+	\end{table}
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{Fig/scenarios_power_output_boxplot}
+		\caption{Power measured from the meter}
+		\label{fig:scenariospoweroutputboxplot}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{Fig/scenarios_mg_load_output_boxplot}
+		\caption{Load of all the microgrid components}
+		\label{fig:scenariosmgloadoutputboxplot}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{Fig/scenarios_ev_power_output_boxplot}
+		\caption{Loads from the EV chargers}
+		\label{fig:scenariosevpoweroutputboxplot}
+	\end{figure}
+	
+	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{Fig/bess_boxplot}
+		\caption{Power produced or consumed from the BESS}
+		\label{fig:bessboxplot}
+	\end{figure}
+	
+
 	\begin{table}[H]
 		\caption{Microgrid Utility Prices and CO\textsubscript{2} Emissions Output under Different Pricing Scenarios and Pricing Structures}
 		\tiny
 		\centering
-		\resizebox{\columnwidth}{!}{%
-		\input{Table/kw_kwh_co2.tex}
-	}
+		\input{Table/kw_kwh_CO2.tex}
 		\normalsize
 		\label{tab:emissions}
 	\end{table}
 	
-%     \begin{itemize}
-%        \item Pricing table under 4 methods 
-%        \item Emissions table under 4 different methods 
-%        \item Discuss ideal scenarios under different methods
-%        \item Discuss future control methods
-%    \end{itemize}   
+
     
 	\begin{figure}[H]
 		\centering
@@ -473,12 +233,7 @@ micorgrids, demand response, TOU, CO\textsubscript{2} emissions, modelica
 		\caption{Summer Net Load Scenario Comparison}
 		\label{fig:netloadscenariocomparisonsummer}
 	\end{figure}
-%	\begin{figure}[H]
-%		\centering
-%		\includegraphics[width=1\linewidth]{Fig/net_load_scenario_comparison}
-%		\caption{}
-%		\label{fig:netloadscenariocomparison}
-%	\end{figure}
+
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=1\linewidth]{Fig/emissions_scenario_comparison}
@@ -486,9 +241,9 @@ micorgrids, demand response, TOU, CO\textsubscript{2} emissions, modelica
 		\label{fig:emissionsscenariocomparison}
 	\end{figure}
 	\section{Conclusion}
-		Electric vehicle charging will have a significant impact on the electric costs and emission levels of a microgrid. Level 2 charging had and relatively minimal effect on costs, with a 60 to 90\% increase in electricity costs, which is not much considering that four Level 2 chargers were used. However, just one Level 3 EV charger can cause double to quadruple electric costs. Level 2 chargers have a very small impact on demand charges even when all four chargers are running since the 7.2 kilowatts of each EV charger is way less, and each has a max peak relative to the system. However, the 50 kW peaks created by the Level 3 charger nearly eclipse the demand for the HVAC units, and both  used in unisoncan double the maximum peak and the demand costs. This happens mostly at noon when HVACs and EVs run simultaneously. Energy charges for both with and without the BESS are similar, albeit slightly higher with BESS. This was expected since BESS does not reduce energy costs, only demand charges with the flat rate used by the university’s utility company. Level 2 charging and significantly easier to recover the charging costs compared to Level 3 charging. The difficulty is that just one charging event that aligns with the other loads can easily double the price of that month’s electrical bill. Implementing a Level 3 charging control system must prohibit users from utilizing fast charging at peak hours when charging one vehicle can cause major costs to the provider. Aside from the major cost differences, locally produced solar combined with EV charging has a huge potential to reduce CO2 emissions from transportation. Even when utilizing both Level 2 and three chargers and no BESS, there’s only a 42\% increase and carbon dioxide emissions compared to no EV charging at all, Increasing volume from 21 tons of CO2 to 30 tons of CO2. The X amount of vehicle trips mitigates this slight increase in CO2 if combustion engine vehicles were used instead.
+		Electric vehicle charging will have a significant impact on the electric costs and emission levels of a microgrid. Level 2 charging had a relatively minimal effect on costs, with a 60 to 90\% increase in electricity costs, which is not much considering that four Level 2 chargers were used. However, just one Level 3 EV charger can cause double to quadruple electric costs. Level 2 chargers have a very small impact on demand charges even when all four chargers are running since the 7.2 kilowatts of each EV charger is much less, and each has a max peak relative to the system. However, the 50 kW peaks created by the Level 3 charger nearly eclipse the demand for the HVAC units, and both  used in unison can double the maximum peak and the demand costs. This happens mostly at noon when HVACs and EVs run simultaneously. Energy chargesboth with and without the BESS are similar, albeit slightly higher with BESS. This was expected since BESS does not reduce energy costs, only demand charges with the flat rate used by the university’s utility company. The costs of Level 2 charging is significantly easier to recover compared to Level 3 charging. The difficulty is that just one charging event that aligns with the other loads can easily double the price of that month’s electrical bill. Implementing a Level 3 charging control system must prohibit users from utilizing fast charging at peak hours when charging one vehicle can cause major costs to the provider. Aside from the major cost differences, locally produced solar power combined with EV charging has a huge potential to reduce CO\textsubscript{2} emissions from transportation. Even when utilizing both Level 2 and3 chargers and no BESS, there’s only a 42\% increase of carbon dioxide emissions compared to no EV charging at all, increasing volume from 21 tons of CO\textsubscript{2} to 30 tons of CO\textsubscript{2}. The X amount of vehicle trips mitigates this slight increase in CO\textsubscript{2} if combustion engine vehicles were used instead. 
 	\section{Future Works}
-%	Future papers will investigate different microgrid setups and optimizations for a more in-depth analysis.  The effects NEM 3.0 will have on pricing and CO\textsubscript{2} emissions compared to NEM 2.0 is of great interest. Also control algorithms and electric utility TOU rates that can optimize pricing and CO\textsubscript{2} emissions will also be assessed. 
+	    Future papers will investigate different more advanced control strategies to further decrease electric costs and CO\textsubscript{2} by preventing users from charging during high peak times, utilize the clean energy produced by the solar panels, and only pull power from the grid during low CO\textsubscript{2} times.
 %		\nocite{*}
 		\bibliographystyle{IEEEtran}
 		\bibliography{cite}
