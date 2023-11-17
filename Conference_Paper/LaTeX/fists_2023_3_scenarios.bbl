@@ -47,6 +47,15 @@ C.~E. Commission, ``New zev sales in california.'' [Online]. Available:
   \url{https://www.energy.ca.gov/data-reports/energy-almanac/zero-emission-vehicle-and-infrastructure-statistics/new-zev-sales}
 \BIBentrySTDinterwordspacing
 
+\bibitem{microgrid_def}
+D.~T. Ton and M.~A. Smith, ``The us department of energy's microgrid
+  initiative,'' \emph{The Electricity Journal}, vol.~25, no.~8, pp. 84--94,
+  2012.
+
+\bibitem{microgrid_def_ieee}
+K.~R. Padiyar and A.~M. Kulkarni, \emph{Microgrids: Operation and Control},
+  2019, pp. 415--453.
+
 \bibitem{himabindu2021analysis}
 N.~Himabindu, S.~Hampannavar, B.~Deepa, and M.~Swapna, ``Analysis of microgrid
   integrated photovoltaic (pv) powered electric vehicle charging stations
