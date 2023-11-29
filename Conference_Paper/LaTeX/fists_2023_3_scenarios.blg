@@ -12,55 +12,56 @@ Repeated entry---line 414 of file cite.bib
  : @misc{OpenModelica
  :                   , url={https://openmodelica.org/}, journal={OpenModelica}}
 I'm skipping whatever remains of this entry
-Repeated entry---line 428 of file cite.bib
- : @misc{ev_sale_percentage
- :                         , title={Milestone: 1 in 4 new cars sold in California were zero-emission}, url={https://www.gov.ca.gov/2023/08/02/milestone-1-in-4-new-cars-sold-in-california-were-zero-emission/}, journal={California Governor}, author={California, State of}, year={2023}, month={Aug}}
+I was expecting a `,' or a `}'---line 451 of file cite.bib
+ : @misc{numpy.random.poisson 
+ :                            - NumPy v1.26 Manual, url={https://numpy.org/doc/stable/reference/random/generated/numpy.random.poisson.html}, journal={numpy.random.poisson - NumPy v1.26 Manual}}
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "numpy.random.poisson-NumPyv1.26Manual"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 Warning--missing publisher in microgrid_def_ieee
 
 Done.
-You've used 17 entries,
+You've used 18 entries,
             4087 wiz_defined-function locations,
-            1179 strings with 15996 characters,
-and the built_in function-call counts, 10194 in all, are:
-= -- 786
-> -- 222
+            1178 strings with 15717 characters,
+and the built_in function-call counts, 10075 in all, are:
+= -- 747
+> -- 214
 < -- 72
-+ -- 125
-- -- 39
-* -- 457
-:= -- 1510
-add.period$ -- 29
-call.type$ -- 17
-change.case$ -- 11
++ -- 123
+- -- 36
+* -- 445
+:= -- 1450
+add.period$ -- 27
+call.type$ -- 18
+change.case$ -- 8
 chr.to.int$ -- 156
-cite$ -- 18
-duplicate$ -- 774
-empty$ -- 841
-format.name$ -- 48
-if$ -- 2359
+cite$ -- 19
+duplicate$ -- 781
+empty$ -- 854
+format.name$ -- 45
+if$ -- 2339
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 145
-newline$ -- 90
-num.names$ -- 12
-pop$ -- 407
+int.to.str$ -- 18
+missing$ -- 148
+newline$ -- 95
+num.names$ -- 9
+pop$ -- 442
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 790
+skip$ -- 779
 stack$ -- 0
-substring$ -- 407
-swap$ -- 584
+substring$ -- 404
+swap$ -- 569
 text.length$ -- 20
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 17
+type$ -- 18
 warning$ -- 1
-while$ -- 37
-width$ -- 19
+while$ -- 34
+width$ -- 20
 write$ -- 176
 (There were 2 error messages)

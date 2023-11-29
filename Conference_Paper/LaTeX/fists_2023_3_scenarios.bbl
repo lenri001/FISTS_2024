@@ -23,16 +23,14 @@
 
 \bibitem{ev_sale_percentage}
 \BIBentryALTinterwordspacing
-C.~E. Commission, ``New zev sales in california.'' [Online]. Available:
-  \url{https://www.energy.ca.gov/data-reports/energy-almanac/zero-emission-vehicle-and-infrastructure-statistics/new-zev-sales}
+ [Online]. Available:
+  \url{https://www.gov.ca.gov/2023/08/02/milestone-1-in-4-new-cars-sold-in-california-were-zero-emission/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{ice_ban}
 \BIBentryALTinterwordspacing
-S.~o. California, ``Governor newsom announces california will phase out
-  gasoline-powered cars \& amp; drastically reduce demand for fossil fuel in
-  california’s fight against climate change,'' Apr 2021. [Online]. Available:
-  \url{https://www.gov.ca.gov/2020/09/23/governor-newsom-announces-california-will-phase-out-gasoline-powered-cars-drastically-reduce-demand-for-fossil-fuel-in-californias-fight-against-climate-change/}
+ [Online]. Available:
+  \url{https://www.gov.ca.gov/2020/09/23/governor-newsom-announces-california-will-phase-out-gasoline}
 \BIBentrySTDinterwordspacing
 
 \bibitem{ev_stations_CA}
@@ -43,8 +41,8 @@ S.~o. California, ``Governor newsom announces california will phase out
 
 \bibitem{ev_stats}
 \BIBentryALTinterwordspacing
-C.~E. Commission, ``New zev sales in california.'' [Online]. Available:
-  \url{https://www.energy.ca.gov/data-reports/energy-almanac/zero-emission-vehicle-and-infrastructure-statistics/new-zev-sales}
+ [Online]. Available:
+  \url{https://www.transportation.gov/rural/ev/toolkit/ev-basics/charging-speeds}
 \BIBentrySTDinterwordspacing
 
 \bibitem{microgrid_def}
@@ -117,6 +115,11 @@ J.~Garrido, M.~J. Barth, L.~Enriquez-Contreras, A.~J. Hasan, M.~Todd, S.~Ula,
 \bibitem{ModelicaBuildingsLibrary}
 \BIBentryALTinterwordspacing
  [Online]. Available: \url{https://simulationresearch.lbl.gov/modelica/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{NumPy}
+\BIBentryALTinterwordspacing
+ [Online]. Available: \url{https://numpy.org/}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}

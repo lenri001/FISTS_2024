@@ -12,16 +12,16 @@
 
 \begin{document}
 \begin{tikzpicture}
-  \node[block, fill = teal] (a) at(0,0) {Breaker Panel};
+  \node[block, fill = teal] (a) at(0,0) {Controllable Panel};
   \node[block, fill = orange, right=of a, xshift = 4cm] (b) {Battery Energy Storage Inverter};
-  \node[block, fill = green,right= of b] (c) {Lithium Battery Array};
+  \node[block, fill = green,right= of b] (c) {500 kWh Lithium Battery Array};
   \node[block, fill = magenta, left=of a, xshift  = -4 cm] (d) {Solar Panel Inverter};
-  \node[block, fill = pink, left=of d] (e) {Solar Panel Array};
+  \node[block, fill = pink, left=of d] (e) {100 kW Solar Panel Array};
   \node[block,fill = red, above =of a, yshift = 2cm] (q) {Power Grid};
-  \node[block,fill = orange] (l) at (-1.625,-6) {Level 2 Chargers};
-  \node[block,fill = cyan] (n) at (1.625,-6) {Level 3 Charger};
-  \node[block,fill=red, below left =of a, xshift = 1.3cm] (o) {HVAC Loads};
-  \node[block,fill = orange, below right= of a, xshift = -1.3cm] (j){Plug Loads};
+  \node[block,fill = orange] (l) at (-1.625,-6) {4x Level 2 Chargers};
+  \node[block,fill = cyan] (n) at (1.625,-6) {1x Level 3 Charger};
+  \node[block,fill=red, below left =of a, xshift = 1.3cm] (o) {Building HVAC Loads};
+  \node[block,fill = orange, below right= of a, xshift = -1.3cm] (j){Building Plug Loads};
 %  \node[block,fill = orange, below of= e] (l)  {Level 2 Chargers};
 %  \node[block,fill = cyan, below of= q] (n) at {V2G Charger};
   

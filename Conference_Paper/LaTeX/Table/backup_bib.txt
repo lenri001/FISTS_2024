@@ -1,0 +1,10 @@
+
+%@misc{ev_sale_percentage, title={New Zev sales in California}, url={https://www.energy.ca.gov/data-reports/energy-almanac/zero-emission-vehicle-and-infrastructure-statistics/new-zev-sales}, journal={California Energy Commission}, publisher={California Energy Commission}, author={California Energy Commission}} 
+
+%@misc{ice_ban, title={Governor Newsom announces California will phase out gasoline-powered cars \& amp; drastically reduce demand for fossil fuel in California’s fight against climate change}, url={https://www.gov.ca.gov/2020/09/23/governor-newsom-announces-california-will-phase-out-gasoline}, journal={California Governor}, author={California, State of}, year={2021}, month={Apr}} 
+% https://www.gov.ca.gov/2020/09/23/governor-newsom-announces-california-will-phase-out-gasoline-powered-cars-drastically-reduce-demand-for-fossil-fuel-in-californias-fight-against-climate-change/
+
+%@misc{ev_stations_CA, url={https://afdc.energy.gov/stations/#/analyze?country=US&amp;fuel=ELEC&amp;ev_levels=2&amp;region=US-CA}, journal={Alternative Fuels Data Center: Alternative Fueling Station Locator}} 
+%
+%@misc{ev_sale_percentage, title={Milestone: 1 in 4 new cars sold in California were zero-emission}, url={https://www.gov.ca.gov/2023/08/02/milestone-1-in-4-new-cars-sold-in-california-were-zero-emission/}, journal={California Governor}, author={California, State of}, year={2023}, month={Aug}} 
+%@misc{ev_sale_percentage, title={Milestone: 1 in 4 new cars sold in California were zero-emission}, url={https://www.gov.ca.gov/2023/08/02/milestone-1-in-4-new-cars-sold-in-california-were-zero-emission/}} 
