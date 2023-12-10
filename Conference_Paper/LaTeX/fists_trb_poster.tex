@@ -91,9 +91,9 @@
 %	TITLE SECTION 
 %----------------------------------------------------------------------------------------
 
-\title{Microgrid Demand Response: A Comparison of Simulated and Real Results} % Poster title
+\title{CO\textsubscript{2} and Cost Impacts of a Transportation-microgrid with Electric Vehicle Charging Infrastructure: a case study in Southern California} % Poster title
 
-\author{Luis Fernando Enriquez-Contreras, A S M Jahid Hasan,  Jubair Yusuf, Jacqueline Garrido, Sadrul Ula} % Author(s)
+\author{Luis Fernando Enriquez-Contreras, Matthew Barth, Sadrul Ula} % Author(s)
 
 \institute{Department of Electrical and Computer Engineering  \\ University of California, Riverside} % Institution(s)
 
@@ -135,8 +135,7 @@
 %----------------------------------------------------------------------------------------
 
 \begin{block}{Abstract}
-	Microgrids can be used in demand response (DR) and islanding operations. This paper explores a real-world microgrid implementation performed at the University of California, Riverside. The intended purpose is to see the feasibility of demand response and islanding in a real microgrid. An algorithm is used to generate ``target data" for the Battery Energy Storage (BES) Inverter to follow. The other purpose is to see the accuracy when transitioning from a simulated model to a real-life implementation. The results from this implementation show it is feasible to respond to demand response scenarios with the current setup. However, more research is needed to successfully implement islanding responses due to infrequent power spikes that briefly draw more power than the microgrid can produce.
-
+	As an important part of Intelligent Transportation Systems (ITS), this paper presents a case study at the University of California, Riverside (UCR) that evaluates the effectiveness of different transportation-based microgrid configurations in reducing both carbon dioxide (CO\textsubscript{2}) emissions and electricity costs. CO\textsubscript{2} emissions are calculated using high-resolution California Independent System Operator (CAISO) CO\textsubscript{2} emissions data to accurately assess the environmental impact of each setup. Electric costs were also compared to determine the financial savings potential for the consumer. The results demonstrate that a peak-shaving transportation-microgrid strategy can effectively reduce CO\textsubscript{2} emissions in the range of 24\% to 38\% and costs from \$27,000 to \$29,000 per year, even when considering the additional demand from 12 vehicles charging daily at the building. However, careful consideration should be given to battery sizing, as peak-shaving has diminishing returns. Doubling the battery size may only provide an additional savings of \$2,000 per year with a negligible reduction in emissions. This highlights the importance of optimizing battery capacity to maximize cost-effectiveness and environmental impact.
 \end{block}
 
 %------------------------------------------------
@@ -162,11 +161,11 @@
 %	Setup
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Setup}
+\begin{block}{Microgrid Architecture}
 	\begin{figure}[!htb] 		
-		\includegraphics[width=\linewidth,keepaspectratio, angle=0]{Fig/power_system_setup.pdf}
-		\caption{Power System Setup for Office Building Microgrid}
-		\label{pow}			
+		\includegraphics[width=\linewidth]{Fig/power_system_setup_modelica}
+		\caption{\footnotesize Microgrid Architecture of our Case Study Example BESS: Battery Energy Storage System}
+		\label{fig:powersystemsetupfull}
 	\end{figure}
 \end{block}
 
@@ -229,38 +228,13 @@
 %	MATHEMATICAL SECTION
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Optimization Algorithim}
-\begin{algorithm}[H]
-	\caption{Optimize Net Load}\label{alg:opt}
-	Read solar values $P^{S}$ for electric meter\\
-	Get net load $P^{G}$ \\
-	Convert to 15 minute data \\ 
-	Add $P^{G}$ and $P_{S}$  to get $P^{L}$\\
-	$P^{B}_{t} \geq 0$ = Charging \\
-	$P^{B}_{t} < 0$ = Discharging \\
-	Optimize $P^{G}$ for $P^{B}$, $P^{S}$, and  $P^{L}$\\
-	%			\scriptsize
-	\begin{equation} \label{objective_2} 
-	\min_{P^{G}, P^{B}, P^{S}, P^{L}} \ f(P^{G})
-	\end{equation}
-	\normalsize
-	subject to
-	\begin{equation} \label{processing_power}
-	E^{B}_{t + 1} = E^{B}_{t} + P^{B}_{t} \Delta t
-	\end{equation}
-	\begin{equation} \label{server_capacity}
-	E^{B_{min}} \leq  E^{B}_{t} \leq E^{B_{max}}
-	\end{equation}
-	\begin{equation} \label{server_size}
-	-100 \leq P^{B} \leq 100
-	\end{equation}
-	\begin{equation} \label{flow_size}
-	P^{L} = P^{G} + P^{S} + P^{B}
-	\end{equation}
-	%			Use object function min \\
-	%			Charging Command \\
-\end{algorithm}
-$P^{G}$ = Power from/sent to Grid, $P^{B}$ Power from/consumed by the battery, $P^{S}$ Power from Solar, $P^{L}$ Power consumed by Building, and Energy of the Battery (State of Charge)
+\begin{block}{EV Charging Simulations}
+	\begin{figure}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/l2_avg_day_rand_poisson_1_hour_pdf}
+		\caption{\footnotesize Validation of the Level 2 EV Charger Stochastic Process that Compares the Probability Density Function of Actual Charging Data to the Poisson Process}
+		\label{fig:l2avgdayrandpoisson1hourpdf}
+	\end{figure}
 
 \end{block}
 
@@ -277,33 +251,10 @@ $P^{G}$ = Power from/sent to Grid, $P^{B}$ Power from/consumed by the battery, $
 \begin{block}{Results}
 
 	\begin{figure}[!htb]
-		\centering
-		\begin{subfigure}[b]{0.475\textwidth}
 			\centering
-			\includegraphics[width=\textwidth]{Fig/ucr_theortical_actual_net_load_11_20.pdf}
-			\caption[Network2]%
-			{{\small UCR Microgrid Building Theoretical and Actual Load Data }}    
-			\label{ucr_act}
-		\end{subfigure}
-		\hfill
-		\begin{subfigure}[b]{0.475\textwidth}  
-			\centering 
-			\includegraphics[width=\textwidth]{Fig/ucr_theortical_actual_net_load_resample_11_20.pdf}
-			\caption[]%
-			{{\small UCR Microgrid Building Theoretical and Actual Load 15 Minute Average Resample}}    
-			\label{ucr_act_rs}
-		\end{subfigure}
-		\vskip\baselineskip
-		
-		\caption[ The average and standard deviation of critical parameters ]
-		{\small UCR Microgrid Building Theoretical and Actual Load} 
-		\label{fig:ucr_act}
-	\end{figure}
-
-	\begin{figure}[!htb] 		
-		\includegraphics[width=\linewidth,keepaspectratio, angle=0]{Fig/ucr_ivt_bl_sol_power_11_20.pdf}
-		\caption{UCR Microgrid Inverter, Solar, and Building Power}
-		\label{mg_pow}			
+			\includegraphics[width=\linewidth]{Fig/mg_scene_comparison}
+			\caption{\footnotesize EV Charging Scenarios Comparison}
+			\label{fig:mgscenecomparison}
 	\end{figure}
 
 \end{block}
@@ -323,6 +274,13 @@ $P^{G}$ = Power from/sent to Grid, $P^{B}$ Power from/consumed by the battery, $
 %----------------------------------------------------------------------------------------
 %	CONCLUSION
 %----------------------------------------------------------------------------------------
+\begin{block}{}
+		\begin{figure}[!htb] 		
+		\includegraphics[width=0.85\linewidth]{Fig/bess_capacity_comparison}
+		\caption{\footnotesize Cost and CO\textsubscript{2} Emissions for Different Battery Capacities}
+		\label{fig:besscapacitycomparison}		
+	\end{figure}
+\end{block}
 
 \begin{block}{Conclusion}
 
@@ -371,7 +329,7 @@ $P^{G}$ = Power from/sent to Grid, $P^{B}$ Power from/consumed by the battery, $
 
 \begin{block}{Acknowledgements}
 
-I would like to give a special thanks to Henry Gomez, the CE-CERT staff, and my family who have supported me throughout my research and without them this contribution would not be possible. \\
+I would like to give a special thanks to the CE-CERT staff, and my family who have supported me throughout my research and without them this contribution would not be possible. \\
 
 \end{block}
 
@@ -386,7 +344,7 @@ I would like to give a special thanks to Henry Gomez, the CE-CERT staff, and my 
 
 \begin{itemize}
 \item Researcher: Luis Fernando Enriquez-Contreras
-\item Web: \href{https://www.cert.ucr.edu/renewable-energy-production-integration/sustainable-integrated-grid-initiative-sigi}{https://www.cert.ucr.edu/renewable-energy-production-integration/sustainable-integrated-grid-initiative-sigi}
+\item Web: \href{https://www.cert.ucr.edu/transportation-systems-vehicle-infrastructure-interaction}{https://www.cert.ucr.edu/transportation-systems-vehicle-infrastructure-interaction}
 \item Email: \href{lenri001@ucr.edu}{lenri001@ucr.edu}
 \item Phone: +1 (909) 763 1899
 \end{itemize}
