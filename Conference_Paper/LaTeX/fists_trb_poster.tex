@@ -43,7 +43,7 @@
 \usepackage{hyperref,bookmark}
 \usepackage[T1]{fontenc}
 \usepackage{amssymb}
-\usepackage{orcidlink}
+%\usepackage{orcidlink}
 \usepackage{tabularx}
 \usepackage{listings}
 \usepackage{xcolor}
@@ -120,14 +120,12 @@
 %----------------------------------------------------------------------------------------
 
 \begin{alertblock}{Purpose}
-
-\begin{itemize}
-	\item The goal is to see the accuracy of simulated microgrid models when applied to a real system
-	\item This validation's main contribution is documenting the difficulties and challenges involved in transitioning from a simulated model to real-life implementation
-	\item This paper focuses on the problems and outcomes of the microgrid's full-size components and describes how software is implemented in a full-scale microgrid
-	\item The validation results are compared to the simulated model to analyze the differences and similarities between simulated and real-life data
-\end{itemize}
-
+	\begin{itemize}
+		\item This research holds significant implications for the advancement of intelligent transportation systems, as it aims to address the economic needs of EV charging infrastructure owners and determine the optimal configuration that benefits both EV owners and the environment by minimizing greenhouse gas emissions
+		\item This paper delves into the impacts of transportation-microgrids equipped with Level 2 and Level 3 charging on the behavior of microgrids, associated electricity costs, and CO\textsubscript{2} emissions within the context of southern California
+		\item The simulations are conducted using OpenModelica, a dynamic modeling and simulation environment
+		\item This study distinguishes itself from previous research in many ways, including employing a higher time resolution for calculating CO\textsubscript{2} emissions that is measured every 15 minutes
+	\end{itemize}
 \end{alertblock}
 
 %----------------------------------------------------------------------------------------
@@ -138,24 +136,11 @@
 	As an important part of Intelligent Transportation Systems (ITS), this paper presents a case study at the University of California, Riverside (UCR) that evaluates the effectiveness of different transportation-based microgrid configurations in reducing both carbon dioxide (CO\textsubscript{2}) emissions and electricity costs. CO\textsubscript{2} emissions are calculated using high-resolution California Independent System Operator (CAISO) CO\textsubscript{2} emissions data to accurately assess the environmental impact of each setup. Electric costs were also compared to determine the financial savings potential for the consumer. The results demonstrate that a peak-shaving transportation-microgrid strategy can effectively reduce CO\textsubscript{2} emissions in the range of 24\% to 38\% and costs from \$27,000 to \$29,000 per year, even when considering the additional demand from 12 vehicles charging daily at the building. However, careful consideration should be given to battery sizing, as peak-shaving has diminishing returns. Doubling the battery size may only provide an additional savings of \$2,000 per year with a negligible reduction in emissions. This highlights the importance of optimizing battery capacity to maximize cost-effectiveness and environmental impact.
 \end{block}
 
-%------------------------------------------------
-
-%\begin{figure}
-%\includegraphics[width=0.8\linewidth]{placeholder.jpg}
-%\caption{Figure caption}
-%\end{figure}
-
-%----------------------------------------------------------------------------------------
-
 \end{column} % End of the first column
 
 \begin{column}{\sepwid}\end{column} % Empty spacer column
 
-\begin{column}{\twocolwid} % Begin a column which is two columns wide (column 2)
-
-\begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
-
-\begin{column}{\onecolwid}\vspace{-.6in} % The first column within column 2 (column 2.1)
+\begin{column}{\onecolwid} % The second column
 
 %----------------------------------------------------------------------------------------
 %	Setup
@@ -169,64 +154,6 @@
 	\end{figure}
 \end{block}
 
-%----------------------------------------------------------------------------------------
-
-\end{column} % End of column 2.1
-
-\begin{column}{\onecolwid}\vspace{-.6in} % The second column within column 2 (column 2.2)
-
-%----------------------------------------------------------------------------------------
-%	METHODS
-%----------------------------------------------------------------------------------------
-
-\begin{block}{Control Software}
-
-\begin{algorithm}[H]
-	\caption{Microgrid Control Software}\label{alg:control_software}
-	df $\gets$ dataset \\
-	output $\gets$ [] \\
-	count $\gets$ 0 \\
-	delay $\gets$ 15 minutes \\
-	new\_interval $\gets$ current\_time \\
-	\While {data\_length $>$ count}
-	{
-		inverter\_power $\gets$ df.power[count]\\
-		\While{new\_interval $>$ current\_time}
-		{
-			output $\gets$ inverter\_get\_data
-		}
-		count += 1 \\
-		new\_interval += delay \\
-	}	
-\end{algorithm}
-
-\end{block}
-
-%----------------------------------------------------------------------------------------
-
-\end{column} % End of column 2.2
-
-\end{columns} % End of the split of column 2 - any content after this will now take up 2 columns width
-
-%----------------------------------------------------------------------------------------
-%	IMPORTANT RESULT
-%----------------------------------------------------------------------------------------
-
-%\begin{alertblock}{Important Result}
-%
-%Lorem ipsum dolor \textbf{sit amet}, consectetur adipiscing elit. Sed commodo molestie porta. Sed ultrices scelerisque sapien ac commodo. Donec ut volutpat elit.
-%
-%\end{alertblock} 
-
-%----------------------------------------------------------------------------------------
-
-\begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column again
-
-\begin{column}{\onecolwid} % The first column within column 2 (column 2.1)
-
-%----------------------------------------------------------------------------------------
-%	MATHEMATICAL SECTION
-%----------------------------------------------------------------------------------------
 
 \begin{block}{EV Charging Simulations}
 	\begin{figure}
@@ -235,14 +162,28 @@
 		\caption{\footnotesize Validation of the Level 2 EV Charger Stochastic Process that Compares the Probability Density Function of Actual Charging Data to the Poisson Process}
 		\label{fig:l2avgdayrandpoisson1hourpdf}
 	\end{figure}
-
+	
+\end{block}
+\begin{block}{Simulated Scenarios of the UCR Microgrid using Different Layouts}
+	
+	\begin{table}
+		\caption{Simulated Scenarios of the UCR Microgrid using Different Layouts}
+		\scriptsize
+		\input{Table/scenarios_run_3.tex}
+		\label{tab:scenarios}
+	\end{table}
+	
 \end{block}
 
 %----------------------------------------------------------------------------------------
 
-\end{column} % End of column 2.1
+\end{column} % End of the second column
 
-\begin{column}{\onecolwid} % The second column within column 2 (column 2.2)
+
+
+
+
+\begin{column}{\onecolwid} % The third column
 
 %----------------------------------------------------------------------------------------
 %	RESULTS
@@ -256,70 +197,70 @@
 			\caption{\footnotesize EV Charging Scenarios Comparison}
 			\label{fig:mgscenecomparison}
 	\end{figure}
+	
+	\begin{figure}[!htb] 		
+		\includegraphics[width=\linewidth]{Fig/bess_capacity_comparison}
+		\caption{\footnotesize Cost and CO\textsubscript{2} Emissions for Different Battery Capacities}
+		\label{fig:besscapacitycomparison}		
+	\end{figure}
+
+	\begin{figure}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/emissions_scenario_comparison_run_3}
+		\caption{Microgrid CO\textsubscript{2} Emissions Outputs Averages During Times of Day}
+		\label{fig:emissionsscenariocomparison}
+	\end{figure}
 
 \end{block}
 
 %----------------------------------------------------------------------------------------
 
-\end{column} % End of column 2.2
+\end{column} % End of the third column
 
-\end{columns} % End of the split of column 2
-
-\end{column} % End of the second column
 
 \begin{column}{\sepwid}\end{column} % Empty spacer column
 
-\begin{column}{\onecolwid} % The third column
+\begin{column}{\onecolwid} % The fourth column
+\begin{block}{}
+	\begin{table}
+		\caption{Microgrid Utility Prices and CO\textsubscript{2} Emissions Output under Different Scenarios}
+		\centering
+		\footnotesize
+		\input{Table/kw_kwh_CO2_run_4.tex}
+		\label{tab:emissions}
+	\end{table}
+\end{block}
 
 %----------------------------------------------------------------------------------------
 %	CONCLUSION
 %----------------------------------------------------------------------------------------
-\begin{block}{}
-		\begin{figure}[!htb] 		
-		\includegraphics[width=0.85\linewidth]{Fig/bess_capacity_comparison}
-		\caption{\footnotesize Cost and CO\textsubscript{2} Emissions for Different Battery Capacities}
-		\label{fig:besscapacitycomparison}		
-	\end{figure}
-\end{block}
 
 \begin{block}{Conclusion}
-
-	\begin{itemize}	
-		\item The results from this short validation demonstrate the possibility lowering the max demand of the net load, thus reducing the facility’s demand costs, by utilizing a BES system in combination with solar power
-		\item The algorithm proposed and implemented achieved the goal of lowering the max demand, thereby reducing the stress on the grid
-		\item Load prediction is needed to optimize data for the algorithm more accurately; optimization using shorter time intervals is also needed to reduce possible power surges
-		\item This approach is unsuitable for islanding since the net load would exceed zero on multiple occasions
-		\item Future improvements on this microgrid system will integrate load control, and a faster reaction time to the system that should enable full capability of automated islanding
+	\begin{itemize} 
+		\item Transportation-microgrids offer significant economic and environmental benefits
+		\begin{itemize} 
+			\item Estimated annual savings of \$8,000-\$10,000 compared to conventional systems
+			\item Annual savings of \$27,000-\$29,000 compared to buildings with EV chargers but no microgrid
+			\item 24\% - 38\% reduction in CO\textsubscript{2} emissions compared to conventional buildings
+			\item 45\% - 55\% reduction in CO\textsubscript{2} emissions compared to buildings with EV chargers and no microgrid
+		\end{itemize}
+		\item Increased battery capacity does not guarantee improved performance
+		\begin{itemize} 
+			\item Increased capacity improves performance but not proportionally to the cost
+			\item Large capacity needed for challenging situations may not be cost-effective 
+		\end{itemize}
+		\item 15 kW demand price floor discourages zero net load
+		\begin{itemize} 
+			\item Discourages zero net load in peak shaving setups, increasing CO\textsubscript{2} emissions
+		\end{itemize}
+		\item Future Work
+		\begin{itemize} 
+			\item Optimizing electric costs and CO\textsubscript{2} emissions through throttling charging, maximizing solar energy use, and minimizing grid draw during peak CO\textsubscript{2} emissions times
+			\item Assessing the impact of California's new net energy metering policy
+		\end{itemize}
 	\end{itemize}
-
 \end{block}
 
-%----------------------------------------------------------------------------------------
-%	ADDITIONAL INFORMATION
-%----------------------------------------------------------------------------------------
-
-%\begin{block}{Additional Information}
-%
-%Maecenas ultricies feugiat velit non mattis. Fusce tempus arcu id ligula varius dictum. 
-%\begin{itemize}
-%\item Curabitur pellentesque dignissim
-%\item Eu facilisis est tempus quis
-%\item Duis porta consequat lorem
-%\end{itemize}
-%
-%\end{block}
-
-%----------------------------------------------------------------------------------------
-%	REFERENCES
-%----------------------------------------------------------------------------------------
-
-%\begin{block}{References}
-%
-%\nocite{*} % Insert publications even if they are not cited in the poster
-%\small{\bibliographystyle{unsrt}
-%\bibliography{sample}\vspace{0.75in}}
-%
-%\end{block}
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
@@ -333,6 +274,8 @@ I would like to give a special thanks to the CE-CERT staff, and my family who ha
 
 \end{block}
 
+
+%----------------------------------------------------------------------------------------
 %----------------------------------------------------------------------------------------
 %	CONTACT INFORMATION
 %----------------------------------------------------------------------------------------
@@ -341,25 +284,23 @@ I would like to give a special thanks to the CE-CERT staff, and my family who ha
 \setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
 
 \begin{alertblock}{Contact Information}
-
-\begin{itemize}
-\item Researcher: Luis Fernando Enriquez-Contreras
-\item Web: \href{https://www.cert.ucr.edu/transportation-systems-vehicle-infrastructure-interaction}{https://www.cert.ucr.edu/transportation-systems-vehicle-infrastructure-interaction}
-\item Email: \href{lenri001@ucr.edu}{lenri001@ucr.edu}
-\item Phone: +1 (909) 763 1899
-\end{itemize}
-
+	
+	\begin{itemize}
+		\item Researcher: Luis Fernando Enriquez-Contreras
+		\item Web: \href{https://www.cert.ucr.edu/transportation-systems-vehicle-infrastructure-interaction}{https://www.cert.ucr.edu/transportation-systems-vehicle-infrastructure-interaction}
+		\item Email: \href{lenri001@ucr.edu}{lenri001@ucr.edu}
+		\item Phone: +1 (909) 763 1899
+	\end{itemize}
+	
 \end{alertblock}
 
 \begin{center}
-\begin{tabular}{ccc}
-%\includegraphics[width=0.4\linewidth]{logo.png} & \hfill & %\includegraphics[width=0.4\linewidth]{logo.png}
-\end{tabular}
+	\begin{tabular}{ccc}
+		%\includegraphics[width=0.4\linewidth]{logo.png} & \hfill & %\includegraphics[width=0.4\linewidth]{logo.png}
+	\end{tabular}
 \end{center}
 
-%----------------------------------------------------------------------------------------
-
-\end{column} % End of the third column
+\end{column} % End of the fourth column
 
 \end{columns} % End of all the columns in the poster
 
