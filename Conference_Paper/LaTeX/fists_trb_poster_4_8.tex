@@ -2,9 +2,9 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[final, 20 pt]{beamer}
+\documentclass[aspectratio=21, final, 20 pt]{beamer}
 
-\usepackage[size = 2a0, scale=1.15]{beamerposter} % Use the beamerposter package for laying out the poster
+\usepackage[size = a0, scale=1.15]{beamerposter} % Use the beamerposter package for laying out the poster
 \usepackage{pdfpages}
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{tikz}
@@ -32,8 +32,12 @@
 \usepackage{float}
 \usepackage{multirow}
 \usepackage[ruled,linesnumbered]{algorithm2e}
-
-
+\usepackage{geometry}
+%\geometry{paperwidth=96in,paperheight=48in,margin=2cm}
+\setlength{\paperwidth}{96in} % A0 width: 46.8in
+\setlength{\textwidth}{92in}
+\setlength{\paperheight}{48in} % A0 height: 33.1in
+\setlength{\textwidth}{44in}
 \usetheme{confposter} % Use the confposter theme supplied with this template
 
 \setbeamercolor{block title}{fg=ngreen,bg=white} % Colors of the block titles
