@@ -4,7 +4,7 @@
 
 \documentclass[final, 20 pt]{beamer}
 
-\usepackage[size = 2a0, scale=1.15]{beamerposter} % Use the beamerposter package for laying out the poster
+\usepackage[size = 2a0, scale=1.1]{beamerposter} % Use the beamerposter package for laying out the poster
 \usepackage{pdfpages}
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{tikz}
@@ -32,6 +32,8 @@
 \usepackage{float}
 \usepackage{multirow}
 \usepackage[ruled,linesnumbered]{algorithm2e}
+%\renewcommand{\familydefault}{\sfdefault}
+\usepackage{helvet}
 
 
 \usetheme{confposter} % Use the confposter theme supplied with this template
@@ -73,7 +75,7 @@
 %	TITLE SECTION 
 %----------------------------------------------------------------------------------------
 
-\title{CO\textsubscript{2} and Cost Impacts of a Transportation-microgrid with Electric Vehicle Charging Infrastructure: a case study in Southern California} % Poster title
+\title{CO\textsubscript{2} and Cost Impacts of a Microgrid  with Electric Vehicle \\Charging Infrastructure: a Case Study in Southern California} % Poster title
 
 \author{Luis Fernando Enriquez-Contreras, Matthew Barth, Sadrul Ula} % Author(s)
 
@@ -82,7 +84,17 @@
 %----------------------------------------------------------------------------------------
 
 \begin{document}
-
+\bf
+\addtobeamertemplate{headline}{} 
+{\begin{tikzpicture}[remember picture, overlay]
+		\node [anchor=north east, inner sep=3cm]  at (current page.north east)
+		{\includegraphics[height=6cm]{Fig/cert_poster_logo.png}};
+\end{tikzpicture}}
+\addtobeamertemplate{headline}{} 
+{\begin{tikzpicture}[remember picture, overlay]
+		\node [anchor=north west, inner sep=3cm]  at (current page.north west)
+		{\includegraphics[height=6cm]{Fig/ucr_poster_logo.png}};
+\end{tikzpicture}}
 \addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
 \addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
 
@@ -124,43 +136,6 @@
 %	As an important part of Intelligent Transportation Systems (ITS), this paper presents a case study at the University of California, Riverside (UCR) that evaluates the effectiveness of different transportation-based microgrid configurations in reducing both carbon dioxide (CO\textsubscript{2}) emissions and electricity costs. CO\textsubscript{2} emissions are calculated using high-resolution California Independent System Operator (CAISO) CO\textsubscript{2} emissions data to accurately assess the environmental impact of each setup. Electric costs were also compared to determine the financial savings potential for the consumer. The results demonstrate that a peak-shaving transportation-microgrid strategy can effectively reduce CO\textsubscript{2} emissions in the range of 24\% to 38\% and costs from \$27,000 to \$29,000 per year, even when considering the additional demand from 12 vehicles charging daily at the building. However, careful consideration should be given to battery sizing, as peak-shaving has diminishing returns. Doubling the battery size may only provide an additional savings of \$2,000 per year with a negligible reduction in emissions. This highlights the importance of optimizing battery capacity to maximize cost-effectiveness and environmental impact.
 \end{block}
 
-\begin{block}{Transportation-microgrids Mindmap}	
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.7\linewidth]{Fig/paper_mindmap}
-		\caption{}
-		\label{fig:papermindmap}
-	\end{figure}	
-\end{block}
-
-\end{column} % End of the first column
-
-\begin{column}{\sepwid}\end{column} % Empty spacer column
-
-\begin{column}{\onecolwid} % The second column
-
-%----------------------------------------------------------------------------------------
-%	Setup
-%----------------------------------------------------------------------------------------
-
-\begin{block}{Microgrid Architecture}
-	\begin{figure}[!htb] 		
-		\includegraphics[width=\linewidth]{Fig/power_system_setup_modelica}
-		\caption{\footnotesize Microgrid Architecture of our Case Study Example BESS: Battery Energy Storage System}
-		\label{fig:powersystemsetupfull}
-	\end{figure}
-\end{block}
-
-
-\begin{block}{EV Charging Simulations}
-	\begin{figure}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/l2_avg_day_rand_poisson_1_hour_pdf}
-		\caption{\footnotesize Validation of the Level 2 EV Charger Stochastic Process that Compares the Probability Density Function of Actual Charging Data to the Poisson Process}
-		\label{fig:l2avgdayrandpoisson1hourpdf}
-	\end{figure}
-	
-\end{block}
 \begin{block}{Simulated Scenarios of the UCR Microgrid using Different Layouts}
 	
 	\begin{table}
@@ -172,57 +147,82 @@
 	
 \end{block}
 
+%\begin{block}{Transportation-microgrids Mindmap}	
+%	\begin{figure}
+%		\centering
+%		\includegraphics[width=0.7\linewidth]{Fig/paper_mindmap}
+%		\caption{}
+%		\label{fig:papermindmap}
+%	\end{figure}	
+%\end{block}
+
+\end{column} % End of the first column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\twocolwid} % The second column
+
+%----------------------------------------------------------------------------------------
+%	Setup
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Microgrid Architecture}
+	\begin{figure}[!htb] 		
+		\includegraphics[width=0.5\linewidth]{Fig/power_system_setup_modelica}
+		\caption{Microgrid Architecture of our Case Study Example BESS: Battery Energy Storage System}
+		\label{fig:powersystemsetupfull}
+	\end{figure}
+\end{block}
+
+\begin{block}{Results}
+	
+	%	\begin{figure}[!htb]
+		%			\centering
+		%			\includegraphics[width=\linewidth]{Fig/mg_scene_comparison}
+		%			\caption{EV Charging Scenarios Comparison}
+		%			\label{fig:mgscenecomparison}
+		%	\end{figure}
+	
+	\begin{figure}[!htb] 		
+		\includegraphics[width=\linewidth]{Fig/bess_capacity_comparison_scale}
+		\caption{Cost and CO\textsubscript{2} Emissions for Different Battery Capacities}
+		\label{fig:besscapacitycomparison}		
+	\end{figure}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/emissions_scenario_comparison_run_3_scale}
+		\caption{Microgrid CO\textsubscript{2} Emissions Outputs Averages During Times of Day}
+		\label{fig:emissionsscenariocomparison}
+	\end{figure}
+	
+\end{block}
+
+
+
+%\begin{block}{EV Charging Simulations}
+%	\begin{figure}
+%		\centering
+%		\includegraphics[width=\linewidth]{Fig/l2_avg_day_rand_poisson_1_hour_pdf}
+%		\caption{Validation of the Level 2 EV Charger Stochastic Process that Compares the Probability Density Function of Actual Charging Data to the Poisson Process}
+%		\label{fig:l2avgdayrandpoisson1hourpdf}
+%	\end{figure}
+%	
+%\end{block}
+
+
 %----------------------------------------------------------------------------------------
 
 \end{column} % End of the second column
 
-
-
-
-
-\begin{column}{\onecolwid} % The third column
-
-%----------------------------------------------------------------------------------------
-%	RESULTS
-%----------------------------------------------------------------------------------------
-
-\begin{block}{Results}
-
-	\begin{figure}[!htb]
-			\centering
-			\includegraphics[width=\linewidth]{Fig/mg_scene_comparison}
-			\caption{\footnotesize EV Charging Scenarios Comparison}
-			\label{fig:mgscenecomparison}
-	\end{figure}
-	
-	\begin{figure}[!htb] 		
-		\includegraphics[width=\linewidth]{Fig/bess_capacity_comparison}
-		\caption{\footnotesize Cost and CO\textsubscript{2} Emissions for Different Battery Capacities}
-		\label{fig:besscapacitycomparison}		
-	\end{figure}
-
-	\begin{figure}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/emissions_scenario_comparison_run_3}
-		\caption{Microgrid CO\textsubscript{2} Emissions Outputs Averages During Times of Day}
-		\label{fig:emissionsscenariocomparison}
-	\end{figure}
-
-\end{block}
-
-%----------------------------------------------------------------------------------------
-
-\end{column} % End of the third column
-
-
 \begin{column}{\sepwid}\end{column} % Empty spacer column
 
-\begin{column}{\onecolwid} % The fourth column
+\begin{column}{\onecolwid} % The third column
 \begin{block}{}
 	\begin{table}
 		\caption{Microgrid Utility Prices and CO\textsubscript{2} Emissions Output under Different Scenarios}
 		\centering
-		\footnotesize
+		\scriptsize
 		\input{Table/kw_kwh_CO2_run_4.tex}
 		\label{tab:emissions}
 	\end{table}
@@ -232,7 +232,7 @@
 %	CONCLUSION
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Conclusion}
+\begin{block}{Conclusions and Future Work}
 	\begin{itemize} 
 		\item Transportation-microgrids offer significant economic and environmental benefits
 		\begin{itemize} 
@@ -267,7 +267,7 @@
 
 \begin{block}{Acknowledgements}
 
-I would like to give a special thanks to the CE-CERT staff, and my family who have supported me throughout my research and without them this contribution would not be possible. \\
+I would like to give a special thanks to the CE-CERT staff, the Dwight David Eisenhower Transportation Fellowship Program, and my family who have supported me throughout my research and without them this contribution would not be possible. \\
 
 \end{block}
 
@@ -297,7 +297,7 @@ I would like to give a special thanks to the CE-CERT staff, and my family who ha
 	\end{tabular}
 \end{center}
 
-\end{column} % End of the fourth column
+\end{column} % End of the third column
 
 \end{columns} % End of all the columns in the poster
 

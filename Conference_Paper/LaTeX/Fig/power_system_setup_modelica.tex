@@ -11,6 +11,7 @@
 
 
 \begin{document}
+	\bf
 \begin{tikzpicture}
   \node[block, fill = teal] (a) at(0,0) {Controllable Panel};
   \node[block, fill = orange, right=of a, xshift = 4cm] (b) {Battery Energy Storage Inverter};
@@ -37,7 +38,7 @@
   \node[draw,fill=green,fill opacity=0.5,inner xsep=5mm,inner
   	 ysep=8mm,fit=(l)(n),label={50:EV Chargers}]{};
   \node[draw,fill=pink,fill opacity=0.5,inner xsep=5mm,inner
-	 ysep=8mm,fit=(a)(o)(j),label={50:UCR Office Building}]{};
+	 ysep=3mm,fit=(a)(o)(j),label={50:UCR Office Building}]{};
   \end{scope}
   \draw[line] (q)-- (a) -- node [text width=2.5cm,midway,right,align=left] {AC} (q);
   \draw[line] (a)-- (q) -- node [text width=2.5cm,midway,right,align=left] {AC} (a);
