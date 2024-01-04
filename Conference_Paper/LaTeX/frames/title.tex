@@ -1,0 +1,13 @@
+\begin{frame}[plain] 
+	\titlepage
+
+	\ifdefined\ishandout
+	  \newcommand{\LOGO}{aux/ucr_logo_grey.eps}
+	\else
+	  \newcommand{\LOGO}{aux/ucr_logo_cmyk.eps}
+	\fi
+
+	\begin{tikzpicture}[remember picture,overlay]
+		\node[anchor=south west,yshift=2pt,xshift=4pt] at (current page.south west) {\includegraphics[height=1cm]{\LOGO}};
+	\end{tikzpicture}
+\end{frame}

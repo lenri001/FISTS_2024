@@ -1,0 +1,60 @@
+% Theorem Styles
+
+\theoremstyle{theorem}
+\newtheorem{thm}{Theorem}
+\newtheorem{lm}{Lemma}
+\newtheorem{ex}{Example}
+\newtheorem{exs}{Examples}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{notation}{Notation}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+% Commands
+
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\id}{id}
+
+\newcommand{\8}{\infty}
+\newcommand{\A}{\mathscr{A}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\iunit}{\mathbbm{i}}
+
+\newcommand{\dif}{\mathrm{d}}
+\newcommand{\diff}{\,\mathrm{d}}
+\newcommand{\Dim}[1]{\dim_{\mathrm{#1}}}
+\newcommand{\st}{\,|\,}
+\newcommand{\ST}{\,\middle|\,}
+\newcommand{\Poles}{\mathscr{P}}
+\renewcommand\vec[1]{\boldsymbol{#1}}
+\newcommand\Union{\mathop{\bigcup}}
+\newcommand\Intersect{\mathop{\bigcap}}
+\newcommand\union{\mathrel{\cup}}
+\newcommand\intersect{\mathrel{\cap}}
+
+\newgray{darkgrey}{.25}
+\newgray{grey}{.5}
+\newgray{lightgrey}{.75}
+\newgray{vlightgrey}{.9}
+
+\newcommand{\secslide}[2]{
+	\section[#1]{#2}
+		\begin{frame}
+			\begin{center}
+				\ifdefined\ishandout
+					\textbf{\Huge\secname}
+				\else
+					\textcolor{structure}{\textbf{\Huge\secname}}
+				\fi
+			\end{center}
+		\end{frame}
+}
+
+\renewcommand{\baselinestretch}{1.1}
