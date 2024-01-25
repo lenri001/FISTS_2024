@@ -1,0 +1,58 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage[sc]{mathpazo}
+\usepackage{datetime}
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage{url, lipsum}
+\usepackage{hyperref,bookmark}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage{makecell, multirow, tabularx}
+\usepackage{listings}
+\usepackage[ruled,linesnumbered,vlined]{algorithm2e}
+
+\usepackage{float}
+\usepackage{nomencl}
+\usepackage{ifthen}
+
+\renewcommand{\nomgroup}[1]{%
+	\ifthenelse{\equal{#1}{P}}{\item[\textbf{Parameters}]}{%
+		\ifthenelse{\equal{#1}{V}}{\item[\textbf{Variables \\}]}}
+}
+\makenomenclature
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{CO\textsubscript{2} and Cost Impacts of a Microgrid  with Electric Vehicle \\Charging Infrastructure: a Case Study in Southern California}
+
+\author{
+	\IEEEauthorblockN{Luis Fernando Enriquez-Contreras\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}, Matthew Barth\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}, Sadrul Ula\IEEEauthorrefmark{2}}
+	\IEEEauthorblockA{\IEEEauthorrefmark{1}\textit{Department of Electrical  and Computer Engineering} \\
+		\textit{University of California, Riverside}\\
+				Riverside, United States of America \\
+				lenri001@ucr.edu, barth@ece.ucr.edu}
+	\IEEEauthorblockA{\IEEEauthorrefmark{2}\textit{College of Engineering, Center for Environmental Research \& Technology} \\
+		\textit{University of California, Riverside}\\
+				Riverside, United States of America \\
+				lenri001@ucr.edu, barth@ece.ucr.edu, sula@cert.ucr.edu}
+}
+\maketitle
+
+\begin{abstract}
+	As an important part of Intelligent Transportation Systems (ITS), this paper presents a case study at the University of California, Riverside (UCR) that evaluates the effectiveness of different transportation-based microgrid configurations in reducing both carbon dioxide (CO\textsubscript{2}) emissions and electricity costs. CO\textsubscript{2} emissions are calculated using high-resolution California Independent System Operator (CAISO) CO\textsubscript{2} emissions data to accurately assess the environmental impact of each setup. Electric costs were also compared to determine the financial savings potential for the consumer. The results demonstrate that a peak-shaving transportation-microgrid strategy can effectively reduce CO\textsubscript{2} emissions in the range of 24\% to 38\% and costs from \$27,000 to \$29,000 per year, even when considering the additional demand from 12 vehicles charging daily at the building. However, careful consideration should be given to battery sizing, as peak-shaving has diminishing returns. Doubling the battery size may only provide an additional savings of \$2,000 per year with a negligible reduction in emissions. This highlights the importance of optimizing battery capacity to maximize cost-effectiveness and environmental impact.
+\end{abstract}
+\begin{IEEEkeywords}
+microgrids, demand response, CO\textsubscript{2} emissions, modelica, EV charging
+\end{IEEEkeywords}
+
+		
+\end{document}
