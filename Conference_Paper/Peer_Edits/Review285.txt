@@ -1,0 +1,51 @@
+Reviewer 2 of FISTS 2024 submission 60
+
+Comments to the author
+======================
+
+Summary of Work:
+This is a case study for the UCR campus EVSE+BESS+Solar
+analysis of CO2 and power costs when peak shaving as tied
+to a single facility. Results are approximated in
+simulation using the Modelica tool. CO2 costs are derived
+from CAISO using pre-pandemic generation capabilities.
+Power costs appear to be approximated residential rates and
+do not follow the utility schedule or CAISO time of use.
+
+Technical Contributions:
+The addition of CO2 in the grid generation is an
+interesting point; most of this paper details a fairly
+simple facility EMS. The logic for the peak curtailment is
+set at user-directed levels, and the system is not
+flexible. The BESS provides the capability to shift the
+morning EVSE high-use charging to a more economical time
+when photovoltaic is available. The EMS proposed does not
+compare with commercially available solutions already well
+in use.
+
+Review:
+
+This paper effectively advocates for not charging at peak
+times; this is a well-studied theme. The "duck curve" is a
+well known and understood phenomenon, charging during solar
+generation is optimal for reducing grid-based CO2. As only
+historical values are leveraged from older data, this study
+may not be particularly viable for 2023 or predictive
+beyond any modern peak-shaving EMS. 
+
+Further, costs are merely displayed. No mention of utility
+schedule or time of use pricing model is constrained. As no
+electric bill or information is provided, it is uncertain
+what the overall power costs are annually and what the
+percentage savings might be. Utility rates should be
+incorporated. 
+
+Your simulation also smooths the morning charge curve,
+which is a large proponent of the EVSE-based grid draw. The
+addition of the BESS and off-the-shelf EMS should handle
+everything described. The primary impact of this paper
+appears to be the comparison of CO2 emissions, which was
+relatively new. 
+
+
+There are missing references and citations.

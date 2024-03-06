@@ -1,0 +1,49 @@
+Reviewer 3 of FISTS 2024 submission 60
+
+Comments to the author
+======================
+
+Review:
+
+Fig 2 is a little unclear, grid is referring to a
+grid-building connection meter? Is this internal to the EMS
+of the building? How is this data collected and modelled in
+Modelica?
+
+Open Modelica seems to be able to understand 15 minute data
+reasonably accuratly, does this hold true for EVSE use?
+Typical EVSE use is relatively stochastic and depending on
+state of charge, the draw can change. Is Modelica the best
+tool to emulate the Lv 2 chargers? Perhaps better to
+estimate the actual power profiles of specific vehicles
+(there are not that many brands right now) rather than
+generic simulation.
+
+Fig 3 shows that the peak usage and charger draw happens in
+the morning, this will be relatively important to capture,
+are you using the actual data or the simulated session
+data?
+
+Fig 5 does not appear to give any additional information
+
+Please, please break up that first paragraph into something
+smaller. How does charge scheduling? Improve CO2 emisisons?
+
+The key assertions related to previous studies are missing
+citations. This is a very well explored area and your
+implementation case appears to be very narrow. 
+This is a case study but focuses only on simulated scope,
+your study will benefit greatly from the added data of the
+building. 
+The written content does not flow well and the narrative is
+impacted by the meandering logic at times. 
+Peak shaving algorithms are fairly ubiquitous and should
+cite the latest ones which account for all that has been
+proposed.
+
+CAISO's more recent data includes several new wind and
+solar generation as well as increased demand from rapid ev
+adoption during COVID. Why are you expressly removing these
+effects?
+
+There are missing references and citations
