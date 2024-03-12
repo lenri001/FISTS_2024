@@ -45,15 +45,6 @@
   \url{https://www.transportation.gov/rural/ev/toolkit/ev-basics/charging-speeds}
 \BIBentrySTDinterwordspacing
 
-\bibitem{microgrid_def}
-D.~T. Ton and M.~A. Smith, ``The us department of energy's microgrid
-  initiative,'' \emph{The Electricity Journal}, vol.~25, no.~8, pp. 84--94,
-  2012.
-
-\bibitem{microgrid_def_ieee}
-K.~R. Padiyar and A.~M. Kulkarni, \emph{Microgrids: Operation and Control},
-  2019, pp. 415--453.
-
 \bibitem{himabindu2021analysis}
 N.~Himabindu, S.~Hampannavar, B.~Deepa, and M.~Swapna, ``Analysis of microgrid
   integrated photovoltaic (pv) powered electric vehicle charging stations
@@ -115,17 +106,6 @@ J.~Garrido, M.~J. Barth, L.~Enriquez-Contreras, A.~J. Hasan, M.~Todd, S.~Ula,
 \bibitem{ModelicaBuildingsLibrary}
 \BIBentryALTinterwordspacing
  [Online]. Available: \url{https://simulationresearch.lbl.gov/modelica/}
-\BIBentrySTDinterwordspacing
-
-\bibitem{NumPy}
-\BIBentryALTinterwordspacing
- [Online]. Available: \url{https://numpy.org/}
-\BIBentrySTDinterwordspacing
-
-\bibitem{numpy_poi}
-\BIBentryALTinterwordspacing
- [Online]. Available:
-  \url{https://numpy.org/doc/stable/reference/random/generated/numpy.random.poisson.html}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}
