@@ -54,6 +54,11 @@ D.~T. Ton and M.~A. Smith, ``The us department of energy's microgrid
 K.~R. Padiyar and A.~M. Kulkarni, \emph{Microgrids: Operation and Control},
   2019, pp. 415--453.
 
+\bibitem{ModelicaLanguage}
+\BIBentryALTinterwordspacing
+ [Online]. Available: \url{https://modelica.org/modelicalanguage.html}
+\BIBentrySTDinterwordspacing
+
 \bibitem{himabindu2021analysis}
 N.~Himabindu, S.~Hampannavar, B.~Deepa, and M.~Swapna, ``Analysis of microgrid
   integrated photovoltaic (pv) powered electric vehicle charging stations
@@ -99,11 +104,6 @@ J.~Garrido, M.~J. Barth, L.~Enriquez-Contreras, A.~J. Hasan, M.~Todd, S.~Ula,
 \bibitem{OpenModelica}
 \BIBentryALTinterwordspacing
  [Online]. Available: \url{https://openmodelica.org/}
-\BIBentrySTDinterwordspacing
-
-\bibitem{ModelicaLanguage}
-\BIBentryALTinterwordspacing
- [Online]. Available: \url{https://modelica.org/modelicalanguage.html}
 \BIBentrySTDinterwordspacing
 
 \bibitem{OMEdit}
