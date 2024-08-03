@@ -1,0 +1,20 @@
+Reviewer 1 of ITSC 2024 submission 719
+
+Comments to the author
+======================
+
+This paper explores the role of transportation-based
+microgrid configurations in cutting down CO2 emissions and
+reducing electricity costs within an Intelligent
+Transportation System (ITS). Focusing on a case study at
+the University of California, Riverside (UCR), it leverages
+detailed CO2 emission data from the California Independent
+System Operator (CAISO) to measure environmental impacts.
+Additionally, it evaluates the potential savings in
+electricity costs. 
+The paper addresses a very interesting topic. It is well
+written and very well presented. The results provided are
+valuable. Overall, I recommend accepting this paper as is.
+
+However, a carefull proofreading is needed since there are
+some typos.

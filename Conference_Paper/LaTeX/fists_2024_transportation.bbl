@@ -122,10 +122,16 @@ J.~Garrido, M.~J. Barth, L.~Enriquez-Contreras, A.~J. Hasan, M.~Todd, S.~Ula,
  [Online]. Available: \url{https://numpy.org/}
 \BIBentrySTDinterwordspacing
 
-\bibitem{numpy_poi}
+\bibitem{rpu_rate}
 \BIBentryALTinterwordspacing
  [Online]. Available:
-  \url{https://numpy.org/doc/stable/reference/random/generated/numpy.random.poisson.html}
+  \url{https://riversideca.gov/utilities/sites/riversideca.gov.utilities/files/pdf/rates-electric/2024/Electric%20Schedule%20A%20%20-%20Effective%2001-1-24%20Final.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{rpu_nem}
+\BIBentryALTinterwordspacing
+ [Online]. Available:
+  \url{https://riversideca.gov/utilities/sites/riversideca.gov.utilities/files/pdf/rates-electric/Electric%20Rate%20Schedule%20NEM%20-%20Attachment%201-%20Effective%2001-01-24%20.pdf}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}

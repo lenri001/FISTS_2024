@@ -1,0 +1,22 @@
+Reviewer 3 of ITSC 2024 submission 719
+
+Comments to the author
+======================
+
+The authors of “CO2 and Cost Impact Analysis of a Microgrid
+with Electric Vehicle Charging Infrastructure: a Case Study
+in Southern California” provide a numerical study in
+OpenModelica with data from UC Riverside to understand the
+effectiveness of microgrid configurations at reducing CO2
+emissions. The study shows that the several features such
+as microgrid structure, battery size, vehicle charger type
+effect the power consumption and generation needs. I find
+the work to be novel and interesting. I believe it should
+be accepted.
+Comments: 
+-	there is a reference error on page 3
+-	I find the literature review to be presented quite
+thoroughly, but perhaps there are more related works that
+should be cited. Nine research papers referenced is low.
+-	Additionally, I think referencing a website for
+numpy or other packages is irrelevant.

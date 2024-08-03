@@ -1,0 +1,62 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/CVE-2023-32700 patched)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: ITSC_2024_LUISFERNANDO_ENRIQUEZCONTRERAS.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: cite.bib
+Repeated entry---line 414 of file cite.bib
+ : @misc{OpenModelica
+ :                   , url={https://openmodelica.org/}, journal={OpenModelica}}
+I'm skipping whatever remains of this entry
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--missing publisher in microgrid_def_ieee
+
+Done.
+You've used 22 entries,
+            4087 wiz_defined-function locations,
+            1189 strings with 16444 characters,
+and the built_in function-call counts, 11787 in all, are:
+= -- 860
+> -- 243
+< -- 84
++ -- 142
+- -- 40
+* -- 514
+:= -- 1693
+add.period$ -- 32
+call.type$ -- 22
+change.case$ -- 9
+chr.to.int$ -- 183
+cite$ -- 23
+duplicate$ -- 922
+empty$ -- 1014
+format.name$ -- 50
+if$ -- 2735
+int.to.chr$ -- 0
+int.to.str$ -- 22
+missing$ -- 177
+newline$ -- 113
+num.names$ -- 10
+pop$ -- 541
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 907
+stack$ -- 0
+substring$ -- 468
+swap$ -- 659
+text.length$ -- 23
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 22
+warning$ -- 1
+while$ -- 38
+width$ -- 24
+write$ -- 208
+(There was 1 error message)

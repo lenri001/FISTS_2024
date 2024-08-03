@@ -1,0 +1,24 @@
+Comments to author (Associate Editor)
+=====================================
+
+The paper investigates the effectiveness of
+transportation-based microgrid configurations in reducing
+carbon dioxide (CO2) emissions and electricity costs.  A
+case study at the University of California, Riverside (UCR)
+utilizes high resolution California Independent System
+Operator (CAISO) CO2 emission data to assess the
+environmental impact of each microgrid configuration.
+Results prove that a load-following transportation
+microgrid strategy can significantly reduce CO2 emissions,
+while saving annual costs.
+
+The paper is well written and organized. The topic is quite
+interesting and worthy of investigation. 
+I think that the paper can be accepted after a minor
+revision. 
+In particular:
+1. A careful proofreading is needed - there are some typos
+and grammatical errors through my reading;
+2. Revise references list - there is a missing reference in
+Sect. II-C.
+

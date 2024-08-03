@@ -1,0 +1,30 @@
+Reviewer 2 of ITSC 2024 submission 719
+
+Comments to the author
+======================
+
+This paper presents a case study of transportation-based
+microgrid configuration impact on carbon dioxide (CO2)
+emissions and electricity costs using real-world and
+simulated data. The study demonstrates that a
+load-following strategy of the transportation microgrid
+configuration can effectively reduce CO2 emissions and
+costs. Additionally, it highlights the importance of
+optimizing battery capacity to strike a balance between
+electricity cost and environmental impact.
+
+Strengths:
++ The problem is well-motivated and well-written.
++ Extensive experiments are presented to validate the
+proposed hypothesis using different battery sizes and EV
+charging loads.
+
+Weaknesses:
+- The authors mentioned to have used a higher time
+resolution (i.e., capturing data every 15 minutes) for
+calculating CO2 emissions, which differs from existing
+works. However, they did not compare their work with any
+state-of-the-art works or explain the reasons for choosing
+the 15-minute window.
+- Typos on section I-B (i.e., traction)
+- A reference is missing in Section II-C (i.e., ?)
