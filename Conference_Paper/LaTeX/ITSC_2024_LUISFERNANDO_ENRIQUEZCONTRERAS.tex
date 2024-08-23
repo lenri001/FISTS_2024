@@ -18,10 +18,11 @@
 \usepackage{amssymb}
 \usepackage{makecell, multirow, tabularx}
 \usepackage[ruled,linesnumbered,vlined]{algorithm2e}
-
+\usepackage{adjustbox}
 \usepackage{float}
 \usepackage{nomencl}
 \usepackage{ifthen}
+\usepackage[top=54pt, left=54pt, right=54pt, bottom=54pt]{geometry}
 
 \renewcommand{\nomgroup}[1]{%
 	\ifthenelse{\equal{#1}{P}}{\item[\textbf{Parameters}]}{%
@@ -246,7 +247,9 @@ Scenario 2, with its increased charging events, shows about a 26\% increase in C
 \begin{table*}
 \caption{Microgrid Utility Prices and CO\textsubscript{2} Emissions Output under Different Battery Sizes and EV Charging Demands}
 \centering
+\begin{adjustbox}{max width=\textwidth}
 \input{Table/kw_kwh_co2_run_level_2_level_3.tex}
+\end{adjustbox}
 \normalsize
 \label{tab:emissions}
 \end{table*}	
@@ -264,8 +267,10 @@ Scenario 2, with its increased charging events, shows about a 26\% increase in C
 %	\end{figure}
 \begin{table*}
 \centering
-\caption{Microgrid Building Power Generation \& Consumption \\ (This table determines if the renewable energy produced is sufficient to meet demand)}
+\caption{\centering Microgrid Building Power Generation \& Consumption \\  \centering (This table determines if the renewable energy produced is sufficient to meet demand)}
+\begin{adjustbox}{max width=\textwidth}
 \input{Table/mg_gen_load_level_2_level_3.tex}
+\end{adjustbox}
 \label{tab:gen_load_level_2_level_3}
 \end{table*}	
 %	\begin{table}
@@ -287,14 +292,18 @@ Scenario 2, with its increased charging events, shows about a 26\% increase in C
 \begin{table*}[t]
 \caption{Riverside Public Utility Commercial Demand Rate \cite{rpu_rate}}
 \centering
+\begin{adjustbox}{max width=\textwidth}
 \input{Table/rpu_demand.tex}
+\end{adjustbox}
 \normalsize
 \label{tab:rpu_demand}
 \end{table*}	
 \begin{table*}[t]
-\caption{Riverside Public Utility Commercial Energy Rate \cite{rpu_rate} \\ Note: The solar surplus rate to sell electricity to the grid is \$0.076 per kWh \cite{rpu_nem}}
+\caption{\centering Riverside Public Utility Commercial Energy Rate \cite{rpu_rate} \\ \centering  Note: The solar surplus rate to sell electricity to the grid is \$0.076 per kWh \cite{rpu_nem}}
 \centering
+\begin{adjustbox}{max width=\textwidth}
 \input{Table/rpu_energy.tex}
+\end{adjustbox}
 \normalsize
 \label{tab:rpu_energy}
 \end{table*}	
