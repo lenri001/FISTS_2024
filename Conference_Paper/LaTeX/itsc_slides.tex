@@ -65,6 +65,29 @@
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+% Define frame title template with anchored logos
+
+\setbeamertemplate{frametitle}{
+	\vspace{-0.5ex} % Remove space at the top
+	
+	\begin{beamercolorbox}[ht=8ex,dp=-1ex,center,wd=16cm]{frametitle} % Adjustable height
+		\begin{tikzpicture}[remember picture,overlay]
+			% Left logo
+			\node[anchor=north west, xshift=1.5em, yshift=-0.2cm] at (current page.north west) {
+				\includegraphics[height=2.5em]{aux/CECERT_logo_crop.pdf}
+			};
+			 Right logo
+			 \node[anchor=north east, xshift=-2.5em, yshift=-0.04cm] at (current page.north east) {
+				   \includegraphics[height=3em]{aux/itsc_logo.png}
+				 };
+			 Center title vertically within the box
+			\node[anchor=center] at ([yshift=3.7cm]current page.center) {
+				\insertframetitle
+			};
+		\end{tikzpicture}
+		\vspace{0.5ex} % Remove space at the top
+	\end{beamercolorbox}
+}
 
 \lstdefinestyle{mystyle}{
 	backgroundcolor=\color{backcolour},   
@@ -184,7 +207,7 @@
 				\begin{block}{}
 					\begin{figure}
 						\centering
-						\includegraphics[width=0.9\linewidth]{Fig/Option_3/l2_avg_day_rand_poisson_1_hour_real.pdf}
+						\includegraphics[width=0.9\linewidth]{Fig/l2_real_poisson_1_hour_pdf.pdf}
 						\caption{\footnotesize Level 2 EV Charger Probability Density Function  Created  by Using Actual Charging Data Obtained from a SCADA System}
 						\label{fig:l2avgdayrandpoisson1hourpdf}
 					\end{figure}
@@ -326,7 +349,7 @@
 			\item Investigate electric vehicle load allocation during high peak times
 			\item Minimize power drawn from the grid during periods of high CO\textsubscript{2} emissions
 			\item Assess the effects of the new net energy metering policy in California on the value of the Battery Energy Storage System (BESS).
-			\item Analyze the impact of different time-of-use (TOU) rates in California on electric costs and CO\textsubscript{2} emissions
+			\item  Optimize the microgrid for EV truck charging 
 		\end{itemize}
 	\end{frame}
 	
